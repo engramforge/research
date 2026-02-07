@@ -1,0 +1,51 @@
+# Task: Add Orders Endpoint
+# This is the brownfield task for validation
+
+id: springboot-001
+stack: springboot_3_jdk17
+type: brownfield_patch
+description: "Add /api/v1/orders endpoint with DTO validation and service layer"
+
+requirements:
+  - "Create OrderItemDto with productId (String), quantity (int > 0), unitPrice (BigDecimal > 0)"
+  - "Create OrderDto.Create with items (List, @NotEmpty) and notes (String, optional)"
+  - "Create OrderDto.Response with id, items, totalAmount, createdAt, status"
+  - "Create OrderService with createOrder method"
+  - "Add POST /api/v1/orders endpoint in OrderController"
+  - "Calculate totalAmount as sum of (quantity * unitPrice) for all items"
+  - "Use @Valid for request validation"
+  - "Use constructor injection"
+  - "Return 201 on success with created order"
+  - "Return 400 if validation fails"
+  - "Add MockMvc tests for: valid order, empty items, invalid quantity"
+
+constraints:
+  output_format: unified_diff
+  max_new_deps: 0
+  must_update_tests: true
+
+baseline_files:
+  - src/main/java/com/benchmark/BenchApplication.java
+  - src/main/java/com/benchmark/service/UserService.java
+  - pom.xml
+
+expected_changes:
+  - src/main/java/com/benchmark/model/OrderDto.java           # New
+  - src/main/java/com/benchmark/model/Order.java              # New
+  - src/main/java/com/benchmark/service/OrderService.java     # New
+  - src/main/java/com/benchmark/controller/OrderController.java # New
+  - src/test/java/com/benchmark/controller/OrderControllerTest.java # New
+
+target_versions:
+  - springboot_3_jdk17
+  - springboot_4_jdk21
+
+scoring_weights:
+  security: 0.25
+  stability: 0.20
+  efficiency: 0.15
+  parallelism: 0.10
+  complexity: 0.10
+  integration: 0.10
+  stateful: 0.05
+  entropy: 0.05

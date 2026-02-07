@@ -1,0 +1,49 @@
+# Task: Add Orders Endpoint
+# This is the brownfield task for validation
+
+id: aspnetcore-001
+stack: aspnetcore_9
+type: brownfield_patch
+description: "Add /api/v1/orders endpoint with model validation and service layer"
+
+requirements:
+  - "Create OrderItem record with ProductId (string), Quantity (int > 0), UnitPrice (decimal > 0)"
+  - "Create CreateOrderRequest with Items (List, [MinLength(1)]) and Notes (string?, optional)"
+  - "Create OrderResponse with Id, Items, TotalAmount, CreatedAt, Status"
+  - "Create IOrderService interface and OrderService implementation"
+  - "Add POST /api/v1/orders endpoint in OrdersController"
+  - "Calculate TotalAmount as sum of (Quantity * UnitPrice) for all items"
+  - "Use [FromBody] and model validation"
+  - "Use constructor injection"
+  - "Return 201 Created on success with created order"
+  - "Return 400 BadRequest if validation fails"
+  - "Register OrderService in DI container"
+  - "Add xunit tests for: valid order, empty items, invalid quantity"
+
+constraints:
+  output_format: unified_diff
+  max_new_deps: 0
+  must_update_tests: true
+
+baseline_files:
+  - src/BenchApi/Program.cs
+  - src/BenchApi/Services/UserService.cs
+  - src/BenchApi/BenchApi.csproj
+
+expected_changes:
+  - src/BenchApi/Models/Order.cs                    # New
+  - src/BenchApi/Models/OrderDto.cs                 # New
+  - src/BenchApi/Services/OrderService.cs           # New
+  - src/BenchApi/Controllers/OrdersController.cs    # New
+  - src/BenchApi/Program.cs                         # Add DI registration
+  - tests/BenchApi.Tests/OrdersControllerTests.cs   # New
+
+scoring_weights:
+  security: 0.25
+  stability: 0.20
+  efficiency: 0.15
+  parallelism: 0.10
+  complexity: 0.10
+  integration: 0.10
+  stateful: 0.05
+  entropy: 0.05

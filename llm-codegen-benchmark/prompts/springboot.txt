@@ -1,0 +1,179 @@
+## Task: Add Order Management to Spring Boot API
+
+You are adding ORDER functionality to an existing Spring Boot 3 REST API that already has USER management.
+
+**IMPORTANT: You will be provided with existing baseline files below. Read them carefully and preserve all existing functionality when adding new features.**
+
+## Requirements
+1. Create OrderItemDto with productId (String), quantity (int > 0), unitPrice (BigDecimal > 0)
+2. Create OrderDto.CreateRequest with items (List<OrderItemDto>, @NotEmpty) and notes (String, optional)
+3. Create OrderDto.Response with id, items, totalAmount, createdAt, status
+4. Create OrderService with createOrder method
+5. Add POST /api/v1/orders endpoint in OrderController
+6. Calculate totalAmount as sum of (quantity * unitPrice) for all items
+7. Use @Valid for request validation
+8. Use constructor injection for OrderService
+9. Return 201 on success with created order
+10. Return 400 if validation fails (Spring Boot handles this automatically)
+11. Add MockMvc tests for: (a) valid order creation, (b) empty items validation
+
+## Important Patterns for This Codebase
+
+**DTO validation annotations:**
+- Positive numbers: `@Min(1)` or `@DecimalMin("0.01")`
+- Non-empty collections: `@NotEmpty` or `@Size(min=1)`
+- Required fields: `@NotNull` or `@NotBlank` for strings
+
+**DTO pattern (nested classes):**
+```java
+public class OrderDto {
+    
+    public record ItemDto(
+        @NotBlank String productId,
+        @Min(1) int quantity,
+        @DecimalMin("0.01") BigDecimal unitPrice
+    ) {}
+    
+    public record CreateRequest(
+        @NotEmpty List<ItemDto> items,
+        String notes
+    ) {}
+    
+    public record Response(
+        Long id,
+        List<ItemDto> items,
+        BigDecimal totalAmount,
+        LocalDateTime createdAt,
+        String status
+    ) {}
+}
+```
+
+**Service pattern:**
+```java
+package com.benchmark.service;
+
+import com.benchmark.dto.OrderDto;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.concurrent.atomic.AtomicLong;
+
+@Service
+public class OrderService {
+    
+    private final AtomicLong orderCounter = new AtomicLong(0);
+    
+    public OrderDto.Response createOrder(OrderDto.CreateRequest request) {
+        long orderId = orderCounter.incrementAndGet();
+        BigDecimal total = request.items().stream()
+            .map(item -> item.unitPrice().multiply(BigDecimal.valueOf(item.quantity())))
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
+        
+        return new OrderDto.Response(orderId, request.items(), total, LocalDateTime.now(), "PENDING");
+    }
+}
+```
+
+**Controller pattern:**
+```java
+@RestController
+@RequestMapping("/api/v1/orders")
+public class OrderController {
+    
+    private final OrderService orderService;
+    
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+    
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public OrderDto.Response createOrder(@Valid @RequestBody OrderDto.CreateRequest request) {
+        return orderService.createOrder(request);
+    }
+}
+```
+
+**Test pattern:**
+```java
+package com.benchmark.controller;
+
+import com.benchmark.dto.OrderDto;
+import com.benchmark.service.OrderService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
+@WebMvcTest(OrderController.class)
+class OrderControllerTest {
+    
+    @Autowired
+    private MockMvc mockMvc;
+    
+    @MockBean
+    private OrderService orderService;
+    
+    @Test
+    void createOrder_ValidRequest_Returns201() throws Exception {
+        // Create mock response (use null for timestamp to avoid import issues)
+        OrderDto.ItemDto item = new OrderDto.ItemDto("prod1", 2, new BigDecimal("10.00"));
+        OrderDto.Response response = new OrderDto.Response(1L, List.of(item), new BigDecimal("20.00"), null, "CREATED");
+        
+        given(orderService.createOrder(any(OrderDto.CreateRequest.class))).willReturn(response);
+        
+        mockMvc.perform(post("/api/v1/orders")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"items\":[{\"productId\":\"prod1\",\"quantity\":2,\"unitPrice\":10.00}]}"))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.totalAmount").value(20.00));
+    }
+}
+```
+
+**CRITICAL:**
+- Use `null` for timestamp fields in test mocks (avoids LocalDateTime import issues)
+- If you must use timestamps, add: `import java.time.LocalDateTime;`
+
+## Output Format Requirements
+
+Provide complete file contents for all new or modified files.
+
+**Format: File blocks with paths**
+
+For each file you create or modify, provide:
+
+```
+FILE: src/main/java/com/benchmark/dto/OrderDto.java
+---
+<complete file contents here>
+---
+
+FILE: src/main/java/com/benchmark/controller/OrderController.java
+---
+<complete file contents here>
+---
+```
+
+**CRITICAL REQUIREMENTS:**
+- Provide COMPLETE file contents (no truncation, no "... rest of file")
+- Every class must have proper package declarations
+- All import statements must be present
+- Code must compile without errors
+- Follow Java naming conventions (camelCase for methods/variables)
+- Use records for DTOs (Java 17+)
+- Include Javadoc comments for public APIs
+- Use BigDecimal for monetary values (never double/float)

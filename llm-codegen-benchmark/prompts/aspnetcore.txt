@@ -1,0 +1,154 @@
+## Task: Add Order Management to ASP.NET Core API
+
+You are adding ORDER functionality to an existing ASP.NET Core 9 Web API that already has USER management.
+
+## Requirements
+1. Create OrderItem record with ProductId (string), Quantity (int > 0), UnitPrice (decimal > 0)
+2. Create CreateOrderRequest with Items (List<OrderItem>, [MinLength(1)]) and Notes (string?, optional)
+3. Create OrderResponse with Id, Items, TotalAmount, CreatedAt, Status
+4. Create IOrderService interface and OrderService implementation
+5. Add POST /api/v1/orders endpoint in OrdersController
+6. Calculate TotalAmount as sum of (Quantity * UnitPrice) for all items
+7. Use [FromBody] and model validation
+8. Use constructor injection for IOrderService
+9. Return 201 Created on success with created order
+10. Return 400 BadRequest if validation fails
+11. Register OrderService in DI container in Program.cs
+12. Add xUnit tests for: (a) valid order creation, (b) empty items validation
+
+## Important Patterns for This Codebase
+
+**IMPORTANT: You will be provided with existing baseline files below. Read them carefully and preserve all existing functionality when adding new features.**
+
+**Model validation attributes:**
+- Positive numbers: `[Range(1, int.MaxValue)]` or `[Range(0.01, double.MaxValue)]`
+- Non-empty collections: `[MinLength(1)]`
+- Required fields: Properties are non-nullable by default in C# 11+
+
+**Service pattern:**
+```csharp
+public interface IOrderService
+{
+    Task<OrderResponse> CreateOrderAsync(CreateOrderRequest request);
+}
+
+public class OrderService : IOrderService
+{
+    private static int _orderCounter = 0;
+    
+    public async Task<OrderResponse> CreateOrderAsync(CreateOrderRequest request)
+    {
+        // Implementation here
+    }
+}
+```
+
+**Controller pattern:**
+```csharp
+[ApiController]
+[Route("api/v1/[controller]")]
+public class OrdersController : ControllerBase
+{
+    private readonly IOrderService _orderService;
+    
+    public OrdersController(IOrderService orderService)
+    {
+        _orderService = orderService;
+    }
+    
+    [HttpPost]
+    [ProducesResponseType(typeof(OrderResponse), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<OrderResponse>> CreateOrder([FromBody] CreateOrderRequest request)
+    {
+        // Implementation
+    }
+}
+```
+
+**DI Registration in Program.cs:**
+```csharp
+// Register your service in the DI container
+builder.Services.AddScoped<IOrderService, OrderService>();
+```
+
+**CRITICAL when modifying Program.cs:**
+- PRESERVE all existing service registrations
+- PRESERVE existing endpoints and middleware
+- PRESERVE the `public partial class Program { }` at the end (needed for testing)
+- Only ADD your new service registration
+
+**Test pattern:**
+```csharp
+public class OrdersControllerTests : IClassFixture<WebApplicationFactory<Program>>
+{
+    private readonly HttpClient _client;
+    
+    public OrdersControllerTests(WebApplicationFactory<Program> factory)
+    {
+        _client = factory.CreateClient();
+    }
+    
+    [Fact]
+    public async Task CreateOrder_ValidRequest_Returns201Created()
+    {
+        var request = new
+        {
+            Items = new[]
+            {
+                new { ProductId = "prod1", Quantity = 2, UnitPrice = 10.5m }
+            },
+            Notes = "Test order"
+        };
+        
+        var response = await _client.PostAsJsonAsync("/api/v1/orders", request);
+        
+        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+    }
+    
+    [Fact]
+    public async Task CreateOrder_EmptyItems_Returns400BadRequest()
+    {
+        var request = new { Items = Array.Empty<object>() };
+        
+        var response = await _client.PostAsJsonAsync("/api/v1/orders", request);
+        
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+}
+```
+
+**CRITICAL: DO NOT use Moq or any mocking libraries - use WebApplicationFactory for integration tests**
+
+## Output Format Requirements
+
+Provide complete file contents for all new or modified files.
+
+**Format: File blocks with paths**
+
+For each file you create or modify, provide:
+
+```
+FILE: src/BenchApi/Models/OrderItem.cs
+---
+<complete file contents here>
+---
+
+FILE: src/BenchApi/Controllers/OrdersController.cs
+---
+<complete file contents here>
+---
+```
+
+**CRITICAL REQUIREMENTS:**
+- Provide COMPLETE file contents (no truncation, no "... rest of file")
+- Every class must have proper namespace declarations
+- All using statements must be present
+- Code must compile without errors
+- Follow C# naming conventions (PascalCase for public members)
+- Use records for DTOs where appropriate
+- Include XML documentation comments for public APIs
+- **Test file MUST be:** `tests/BenchApi.Tests/Controllers/OrdersControllerTests.cs` (not test/ singular)
+- **Required test usings:** `System.Net`, `System.Net.Http.Json`, `Microsoft.AspNetCore.Mvc.Testing`, `Xunit`
+- **NO Moq** - Use WebApplicationFactory for integration tests
+- **Test class must:** inherit from `IClassFixture<WebApplicationFactory<Program>>`

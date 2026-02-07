@@ -1,0 +1,230 @@
+[
+  {
+    "model": "claude-opus-4.6",
+    "task": "aspnetcore-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.3628,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "claude-opus-4.6",
+    "task": "fastapi-001",
+    "n": 2,
+    "mean_gates": 4,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 0.0,
+    "cost_per_run_usd": 0.1711,
+    "individual_scores": [
+      4,
+      4
+    ]
+  },
+  {
+    "model": "claude-opus-4.6",
+    "task": "springboot-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.3117,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "claude-sonnet-4.5",
+    "task": "aspnetcore-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.061,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "claude-sonnet-4.5",
+    "task": "fastapi-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.0247,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "claude-sonnet-4.5",
+    "task": "springboot-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.0434,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "gpt-4o",
+    "task": "aspnetcore-001",
+    "n": 3,
+    "mean_gates": 4.67,
+    "std_gates": 0.58,
+    "confidence": 87.6,
+    "perfect_rate": 66.7,
+    "cost_per_run_usd": 0.0173,
+    "individual_scores": [
+      4,
+      5,
+      5
+    ]
+  },
+  {
+    "model": "gpt-4o",
+    "task": "fastapi-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.0115,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "gpt-4o",
+    "task": "springboot-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.0178,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "gpt-4o-mini",
+    "task": "aspnetcore-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.001,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "gpt-4o-mini",
+    "task": "fastapi-001",
+    "n": 16,
+    "mean_gates": 2.06,
+    "std_gates": 1.69,
+    "confidence": 18.0,
+    "perfect_rate": 18.8,
+    "cost_per_run_usd": 0.0005,
+    "individual_scores": [
+      0,
+      2,
+      2,
+      0,
+      0,
+      0,
+      2,
+      5,
+      2,
+      2,
+      5,
+      2,
+      5,
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "model": "gpt-4o-mini",
+    "task": "springboot-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.001,
+    "individual_scores": [
+      5,
+      5
+    ]
+  },
+  {
+    "model": "gpt-5.2",
+    "task": "aspnetcore-001",
+    "n": 2,
+    "mean_gates": 4,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 0.0,
+    "cost_per_run_usd": 0.0309,
+    "individual_scores": [
+      4,
+      4
+    ]
+  },
+  {
+    "model": "gpt-5.2",
+    "task": "fastapi-001",
+    "n": 5,
+    "mean_gates": 3,
+    "std_gates": 2.74,
+    "confidence": 8.7,
+    "perfect_rate": 60.0,
+    "cost_per_run_usd": 0.015,
+    "individual_scores": [
+      0,
+      5,
+      5,
+      0,
+      5
+    ]
+  },
+  {
+    "model": "gpt-5.2",
+    "task": "springboot-001",
+    "n": 2,
+    "mean_gates": 5,
+    "std_gates": 0.0,
+    "confidence": 100.0,
+    "perfect_rate": 100.0,
+    "cost_per_run_usd": 0.0312,
+    "individual_scores": [
+      5,
+      5
+    ]
+  }
+]

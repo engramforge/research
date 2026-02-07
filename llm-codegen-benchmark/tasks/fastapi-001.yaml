@@ -1,0 +1,45 @@
+# Task: Add Orders Endpoint
+# This is the brownfield task for validation
+
+id: fastapi-001
+stack: fastapi
+type: brownfield_patch
+description: "Add /api/v1/orders endpoint with Pydantic validation and auth dependency"
+
+requirements:
+  - "Create OrderItem model with product_id (str), quantity (int > 0), unit_price (float > 0)"
+  - "Create OrderCreate model with items (list of OrderItem, non-empty) and notes (optional str)"
+  - "Create OrderResponse model with id, items, total_amount, created_at, status"
+  - "Add POST /api/v1/orders endpoint that requires authentication"
+  - "Calculate total_amount as sum of (quantity * unit_price) for all items"
+  - "Return 201 on success with created order"
+  - "Return 401 if not authenticated"
+  - "Return 422 if validation fails"
+  - "Add tests for: valid order, empty items, negative quantity, unauthenticated"
+
+constraints:
+  output_format: unified_diff
+  max_new_deps: 0
+  must_update_tests: true
+
+baseline_files:
+  - app/main.py
+  - app/routers/__init__.py
+  - app/dependencies/auth.py
+  - tests/conftest.py
+
+expected_changes:
+  - app/models/order.py        # New file
+  - app/routers/orders.py      # New file
+  - app/main.py                # Add router import
+  - tests/test_orders.py       # New file
+
+scoring_weights:
+  security: 0.25
+  stability: 0.20
+  efficiency: 0.15
+  parallelism: 0.10
+  complexity: 0.10
+  integration: 0.10
+  stateful: 0.05
+  entropy: 0.05
