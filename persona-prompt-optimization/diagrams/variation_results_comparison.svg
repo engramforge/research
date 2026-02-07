@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#FFFFFF"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#1A1A2E">
+    Variation Testing Results: Frontend Developer Role
+  </text>
+  <text x="450" y="50" text-anchor="middle" font-size="12" fill="#8B8FA3">
+    8 variations tested | 2 questions each | Claude Sonnet 4
+  </text>
+  
+  <!-- Y-axis -->
+  <line x1="100" y1="100" x2="100" y2="450" stroke="#1A1A2E" stroke-width="1.5"/>
+  
+  <!-- Y-axis labels -->
+  <text x="85" y="105" text-anchor="end" font-size="11" fill="#555">75</text>
+  <text x="85" y="155" text-anchor="end" font-size="11" fill="#555">72</text>
+  <text x="85" y="205" text-anchor="end" font-size="11" fill="#555">69</text>
+  <text x="85" y="255" text-anchor="end" font-size="11" fill="#555">66</text>
+  <text x="85" y="305" text-anchor="end" font-size="11" fill="#555">63</text>
+  <text x="85" y="355" text-anchor="end" font-size="11" fill="#555">60</text>
+  <text x="85" y="405" text-anchor="end" font-size="11" fill="#555">57</text>
+  <text x="85" y="455" text-anchor="end" font-size="11" fill="#555">54</text>
+  
+  <!-- Y-axis title -->
+  <text x="40" y="275" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E" transform="rotate(-90 40 275)">
+    Average Score
+  </text>
+  
+  <!-- X-axis -->
+  <line x1="100" y1="450" x2="850" y2="450" stroke="#1A1A2E" stroke-width="1.5"/>
+  
+  <!-- Grid lines -->
+  <line x1="100" y1="100" x2="850" y2="100" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="100" y1="150" x2="850" y2="150" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="100" y1="200" x2="850" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="100" y1="250" x2="850" y2="250" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="100" y1="300" x2="850" y2="300" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="100" y1="350" x2="850" y2="350" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="100" y1="400" x2="850" y2="400" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Bar 1: hybrid (WINNER) -->
+  <rect x="130" y="237" width="75" height="213" fill="#2A8F82" stroke="#1A7F72" stroke-width="1.5"/>
+  <text x="167.5" y="225" text-anchor="middle" font-size="14" font-weight="600" fill="#1A7F72">72.3</text>
+  <text x="167.5" y="210" text-anchor="middle" font-size="11" fill="#2A8F82">+4.6</text>
+  <text x="167.5" y="465" text-anchor="middle" font-size="11" fill="#1A1A2E">hybrid</text>
+  <text x="167.5" y="480" text-anchor="middle" font-size="9" fill="#1A7F72" font-weight="600">🏆 WINNER</text>
+  
+  <!-- Bar 2: concise -->
+  <rect x="220" y="270" width="75" height="180" fill="#4A9C8E" stroke="#2A8F82" stroke-width="1"/>
+  <text x="257.5" y="258" text-anchor="middle" font-size="13" fill="#1A7F72">70.7</text>
+  <text x="257.5" y="246" text-anchor="middle" font-size="10" fill="#2A8F82">+3.0</text>
+  <text x="257.5" y="465" text-anchor="middle" font-size="11" fill="#1A1A2E">concise</text>
+  
+  <!-- Bar 3: more_production -->
+  <rect x="310" y="273" width="75" height="177" fill="#6AADA0" stroke="#4A9C8E" stroke-width="1"/>
+  <text x="347.5" y="261" text-anchor="middle" font-size="13" fill="#1A7F72">70.5</text>
+  <text x="347.5" y="249" text-anchor="middle" font-size="10" fill="#2A8F82">+2.9</text>
+  <text x="347.5" y="465" text-anchor="middle" font-size="10" fill="#1A1A2E">more_</text>
+  <text x="347.5" y="477" text-anchor="middle" font-size="10" fill="#1A1A2E">production</text>
+  
+  <!-- Bar 4: more_metrics -->
+  <rect x="400" y="281" width="75" height="169" fill="#8ABEB4" stroke="#6AADA0" stroke-width="1"/>
+  <text x="437.5" y="269" text-anchor="middle" font-size="13" fill="#1A7F72">69.9</text>
+  <text x="437.5" y="257" text-anchor="middle" font-size="10" fill="#2A8F82">+2.3</text>
+  <text x="437.5" y="465" text-anchor="middle" font-size="10" fill="#1A1A2E">more_</text>
+  <text x="437.5" y="477" text-anchor="middle" font-size="10" fill="#1A1A2E">metrics</text>
+  
+  <!-- Bar 5: more_first_person -->
+  <rect x="490" y="286" width="75" height="164" fill="#AACFC8" stroke="#8ABEB4" stroke-width="1"/>
+  <text x="527.5" y="274" text-anchor="middle" font-size="13" fill="#1A7F72">69.5</text>
+  <text x="527.5" y="262" text-anchor="middle" font-size="10" fill="#2A8F82">+1.9</text>
+  <text x="527.5" y="465" text-anchor="middle" font-size="10" fill="#1A1A2E">more_</text>
+  <text x="527.5" y="477" text-anchor="middle" font-size="10" fill="#1A1A2E">first_person</text>
+  
+  <!-- Bar 6: baseline -->
+  <rect x="580" y="330" width="75" height="120" fill="#78909C" stroke="#546E7A" stroke-width="1.5"/>
+  <text x="617.5" y="318" text-anchor="middle" font-size="13" font-weight="600" fill="#263238">67.6</text>
+  <text x="617.5" y="306" text-anchor="middle" font-size="10" fill="#546E7A">baseline</text>
+  <text x="617.5" y="465" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A2E">baseline</text>
+  
+  <!-- Bar 7: claude_xml -->
+  <rect x="670" y="330" width="75" height="120" fill="#C0392B" stroke="#A93226" stroke-width="1"/>
+  <text x="707.5" y="318" text-anchor="middle" font-size="13" fill="#7B241C">67.6</text>
+  <text x="707.5" y="306" text-anchor="middle" font-size="10" fill="#A93226">0.0</text>
+  <text x="707.5" y="465" text-anchor="middle" font-size="10" fill="#1A1A2E">claude_</text>
+  <text x="707.5" y="477" text-anchor="middle" font-size="10" fill="#1A1A2E">xml</text>
+  
+  <!-- Bar 8: markdown_structure -->
+  <rect x="760" y="349" width="75" height="101" fill="#D05446" stroke="#C0392B" stroke-width="1"/>
+  <text x="797.5" y="337" text-anchor="middle" font-size="13" fill="#7B241C">66.2</text>
+  <text x="797.5" y="325" text-anchor="middle" font-size="10" fill="#A93226">-1.4</text>
+  <text x="797.5" y="465" text-anchor="middle" font-size="10" fill="#1A1A2E">markdown_</text>
+  <text x="797.5" y="477" text-anchor="middle" font-size="10" fill="#1A1A2E">structure</text>
+  
+  <!-- Baseline reference line (drawn last so it appears on top) -->
+  <line x1="100" y1="330" x2="850" y2="330" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="855" y="334" font-size="10" fill="#C0392B" font-weight="600">Baseline (67.6)</text>
+  
+  <!-- Key insights box -->
+  <rect x="120" y="510" width="760" height="70" rx="6" fill="#F5F5F5" stroke="#8B8FA3" stroke-width="1"/>
+  <text x="500" y="530" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">
+    Key Findings
+  </text>
+  <text x="500" y="548" text-anchor="middle" font-size="10" fill="#555">
+    ✓ Hybrid (production + metrics) wins with +4.6 point improvement
+  </text>
+  <text x="500" y="563" text-anchor="middle" font-size="10" fill="#555">
+    ✗ Model-specific XML syntax provided no benefit (same as baseline)  |  ✗ Markdown structure hurt performance (-1.4)
+  </text>
+  
+  <!-- Cost/time annotation -->
+  <text x="850" y="495" text-anchor="end" font-size="9" fill="#8B8FA3">
+    Total: $0.37 | ~24 min
+  </text>
+</svg>

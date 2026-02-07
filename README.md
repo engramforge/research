@@ -9,6 +9,7 @@ All artifacts in this repository are released under the [MIT License](LICENSE).
 | Directory | Study | Date |
 |-----------|-------|------|
 | [llm-codegen-benchmark/](llm-codegen-benchmark/) | Measuring LLM Code Generation Consistency for Platform Integration | February 2026 |
+| [persona-prompt-optimization/](persona-prompt-optimization/) | Persona Prompt Optimization for LLM Evaluation Systems | February 2026 |
 
 ## Guidelines
 

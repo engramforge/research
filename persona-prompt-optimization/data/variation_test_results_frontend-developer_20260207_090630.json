@@ -1,0 +1,178 @@
+[
+  {
+    "variation": "baseline",
+    "status": "success",
+    "avg_score": 67.6076688180651,
+    "min_score": 63.9353469568491,
+    "max_score": 71.2799906792811,
+    "sample_count": 2,
+    "total_cost": 0.046269000000000005,
+    "elapsed_time": 63.902896881103516,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 257,
+      "total": 257
+    },
+    "tokens_per_sec": {
+      "total": 4.021726909785783,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "more_production",
+    "status": "success",
+    "avg_score": 70.49692070841789,
+    "min_score": 69.74120201349258,
+    "max_score": 71.25263940334321,
+    "sample_count": 2,
+    "total_cost": 0.044259,
+    "elapsed_time": 57.557092905044556,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 268,
+      "total": 268
+    },
+    "tokens_per_sec": {
+      "total": 4.656246284747841,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "more_metrics",
+    "status": "success",
+    "avg_score": 69.93708159587213,
+    "min_score": 68.90400888247149,
+    "max_score": 70.97015430927277,
+    "sample_count": 2,
+    "total_cost": 0.044139,
+    "elapsed_time": 60.12349605560303,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 253,
+      "total": 253
+    },
+    "tokens_per_sec": {
+      "total": 4.208005465384484,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "more_first_person",
+    "status": "success",
+    "avg_score": 69.54800488091486,
+    "min_score": 66.97779170288597,
+    "max_score": 72.11821805894375,
+    "sample_count": 2,
+    "total_cost": 0.04940399999999999,
+    "elapsed_time": 62.27114987373352,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 462,
+      "total": 462
+    },
+    "tokens_per_sec": {
+      "total": 7.419166033336336,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "concise",
+    "status": "success",
+    "avg_score": 70.71908386793207,
+    "min_score": 70.57624965779922,
+    "max_score": 70.86191807806492,
+    "sample_count": 2,
+    "total_cost": 0.046929,
+    "elapsed_time": 61.906014919281006,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 331,
+      "total": 331
+    },
+    "tokens_per_sec": {
+      "total": 5.346814852023499,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "hybrid",
+    "status": "success",
+    "avg_score": 72.25663706908624,
+    "min_score": 71.19861434002718,
+    "max_score": 73.3146597981453,
+    "sample_count": 2,
+    "total_cost": 0.046944,
+    "elapsed_time": 60.78974628448486,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 342,
+      "total": 342
+    },
+    "tokens_per_sec": {
+      "total": 5.625948797343268,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "claude_xml",
+    "status": "success",
+    "avg_score": 67.5701992464802,
+    "min_score": 63.00507610063295,
+    "max_score": 72.13532239232745,
+    "sample_count": 2,
+    "total_cost": 0.042204,
+    "elapsed_time": 55.065118074417114,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 227,
+      "total": 227
+    },
+    "tokens_per_sec": {
+      "total": 4.122391959520063,
+      "input": 0.0,
+      "output": 0.0
+    }
+  },
+  {
+    "variation": "markdown_structure",
+    "status": "success",
+    "avg_score": 66.16390745252701,
+    "min_score": 64.99286212275857,
+    "max_score": 67.33495278229547,
+    "sample_count": 2,
+    "total_cost": 0.046374,
+    "elapsed_time": 63.30847501754761,
+    "model": "unknown",
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "thinking": 402,
+      "total": 402
+    },
+    "tokens_per_sec": {
+      "total": 6.3498607396335975,
+      "input": 0.0,
+      "output": 0.0
+    }
+  }
+]
