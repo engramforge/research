@@ -1,6 +1,6 @@
 # LLM Code Generation Benchmark — Supporting Code & Data
 
-**Published study:** [Measuring LLM Code Generation Consistency for Platform Integration](https://github.com/engramforge/llm-codebench/blob/main/PILOT_STUDY.md)  
+**Published study:** [Measuring LLM Code Generation Consistency for Platform Integration](https://github.com/engramforge/llm-codebench/blob/main/LLM_CODEGEN_PILOT_STUDY.md)  
 **Project:** [engramforge/llm-codebench](https://github.com/engramforge/llm-codebench)  
 **Date:** February 2026  
 **License:** MIT
@@ -127,5 +127,5 @@ If you find this methodology or data useful, please link to the published study:
 ```
 EngramForge Engineering. "Measuring LLM Code Generation Consistency
 for Platform Integration." February 2026.
-https://github.com/engramforge/llm-codebench/blob/main/PILOT_STUDY.md
+https://github.com/engramforge/llm-codebench/blob/main/LLM_CODEGEN_PILOT_STUDY.md
 ```

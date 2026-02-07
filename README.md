@@ -8,7 +8,7 @@ All artifacts in this repository are released under the [MIT License](LICENSE).
 
 | Directory | Study | Date |
 |-----------|-------|------|
-| [llm-codegen-benchmark/](llm-codegen-benchmark/) | [Measuring LLM Code Generation Consistency for Platform Integration](https://github.com/engramforge/llm-codebench/blob/main/PILOT_STUDY.md) | February 2026 |
+| [llm-codegen-benchmark/](llm-codegen-benchmark/) | [Measuring LLM Code Generation Consistency for Platform Integration](https://github.com/engramforge/llm-codebench/blob/main/LLM_CODEGEN_PILOT_STUDY.md) | February 2026 |
 
 ## Guidelines
 
