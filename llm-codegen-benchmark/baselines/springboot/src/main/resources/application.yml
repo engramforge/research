@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: bench-springboot
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.benchmark: DEBUG

@@ -1,0 +1,44 @@
+[project]
+name = "bench-fastapi"
+version = "0.1.0"
+description = "Minimal FastAPI app for LLM code-gen benchmarking"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "pydantic>=2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.26.0",
+    "mypy>=1.8.0",
+    "ruff>=0.2.0",
+    "bandit>=1.7.0",
+    "pip-audit>=2.7.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "C4", "SIM"]  # Removed "UP" - too pedantic
+ignore = [
+    "B008",    # Function call in argument defaults (FastAPI Depends pattern)
+    "W293",    # Blank line whitespace (cosmetic)
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
