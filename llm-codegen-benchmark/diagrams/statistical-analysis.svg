@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="960" height="660" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="480" y="36" text-anchor="middle" font-size="18" font-weight="600" fill="#1A1A2E">Statistical Analysis Framework</text>
+  <text x="480" y="54" text-anchor="middle" font-size="11" fill="#8B8FA3">165 runs · 11 models · 3 frameworks · 3 hypothesis tests</text>
+
+  <!-- Arrowhead markers -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#4A6FA5"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2A8F82"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#C0392B"/>
+    </marker>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Top: Raw Data Input -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="340" y="72" width="280" height="52" rx="6" fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="480" y="94" text-anchor="middle" font-size="13" font-weight="600" fill="#1A1A2E">Entropy-Controlled Run Data</text>
+  <text x="480" y="110" text-anchor="middle" font-size="10" fill="#555">165 runs × 5 gates per run → summary.json</text>
+
+  <!-- Arrow down -->
+  <path d="M480 124 L480 156" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Aggregate by model × task -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="320" y="156" width="320" height="48" rx="6" fill="#4A6FA5" stroke="#3A5F95" stroke-width="1.5"/>
+  <text x="480" y="177" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Aggregate by Model × Task</text>
+  <text x="480" y="192" text-anchor="middle" font-size="10" fill="#D6E0F0">mean ± σ, n, 95% CI, per-gate pass rates</text>
+
+  <!-- Arrow splits into three -->
+  <path d="M480 204 L480 228" stroke="#4A6FA5" stroke-width="1.5" fill="none"/>
+  <path d="M480 228 L180 228 L180 260" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M480 228 L480 260" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M480 228 L780 228 L780 260" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Three parallel test columns -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Column 1: Kruskal-Wallis -->
+  <rect x="60" y="260" width="240" height="120" rx="6" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="180" y="284" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">Kruskal-Wallis H-test</text>
+  <text x="180" y="302" text-anchor="middle" font-size="10" fill="#555">Do models differ overall?</text>
+  <line x1="80" y1="312" x2="280" y2="312" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="180" y="332" text-anchor="middle" font-size="11" font-weight="600" fill="#2A8F82">H = 56.65</text>
+  <text x="180" y="348" text-anchor="middle" font-size="11" font-weight="600" fill="#2A8F82">p &lt; 0.001</text>
+  <text x="180" y="368" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">✓ Significant (k = 11)</text>
+
+  <!-- Column 2: Mann-Whitney U -->
+  <rect x="360" y="260" width="240" height="120" rx="6" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="480" y="284" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">Mann-Whitney U</text>
+  <text x="480" y="302" text-anchor="middle" font-size="10" fill="#555">Adjacent pairs differ?</text>
+  <line x1="380" y1="312" x2="580" y2="312" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="480" y="332" text-anchor="middle" font-size="11" font-weight="600" fill="#C0392B">All p &gt; 0.05</text>
+  <text x="480" y="348" text-anchor="middle" font-size="10" fill="#555">15 pairwise tests</text>
+  <text x="480" y="368" text-anchor="middle" font-size="10" font-weight="600" fill="#C0392B">✗ No sharp tier boundaries</text>
+
+  <!-- Column 3: Friedman -->
+  <rect x="660" y="260" width="240" height="120" rx="6" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="780" y="284" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">Friedman Test</text>
+  <text x="780" y="302" text-anchor="middle" font-size="10" fill="#555">Does framework matter?</text>
+  <line x1="680" y1="312" x2="880" y2="312" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="780" y="332" text-anchor="middle" font-size="11" font-weight="600" fill="#C0392B">χ² = 5.35</text>
+  <text x="780" y="348" text-anchor="middle" font-size="11" font-weight="600" fill="#C0392B">p = 0.069</text>
+  <text x="780" y="368" text-anchor="middle" font-size="10" font-weight="600" fill="#C0392B">✗ Not significant (k = 11)</text>
+
+  <!-- Arrows down from three columns -->
+  <path d="M180 380 L180 408 L480 408" stroke="#4A6FA5" stroke-width="1" fill="none"/>
+  <path d="M480 380 L480 408" stroke="#4A6FA5" stroke-width="1" fill="none"/>
+  <path d="M780 380 L780 408 L480 408" stroke="#4A6FA5" stroke-width="1" fill="none"/>
+  <path d="M480 408 L480 436" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Interpretation box -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="240" y="436" width="480" height="64" rx="6" fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="480" y="458" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">Interpretation</text>
+  <text x="480" y="476" text-anchor="middle" font-size="10" fill="#555">Models differ significantly overall, but quality degrades gradually —</text>
+  <text x="480" y="490" text-anchor="middle" font-size="10" fill="#555">no sharp tiers. Framework choice does not significantly affect quality.</text>
+
+  <!-- Arrow down to two parallel outputs -->
+  <path d="M480 500 L480 520" stroke="#4A6FA5" stroke-width="1.5" fill="none"/>
+  <path d="M480 520 L280 520 L280 548" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M480 520 L680 520 L680 548" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Output 1: Ranked Leaderboard -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="120" y="548" width="320" height="96" rx="6" fill="#FFFFFF" stroke="#2A8F82" stroke-width="1.5"/>
+  <text x="280" y="570" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">Ranked Leaderboard</text>
+  <line x1="140" y1="578" x2="420" y2="578" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="148" y="596" font-size="10" fill="#555" font-weight="600">🥇 Gemini 3 Pro</text>
+  <text x="332" y="596" font-size="10" fill="#2A8F82" text-anchor="end">5.00 ± 0.00</text>
+  <text x="370" y="596" font-size="10" fill="#8B8FA3">$0.022</text>
+  <text x="148" y="612" font-size="10" fill="#555" font-weight="600">🥈 Claude Sonnet 4.5</text>
+  <text x="332" y="612" font-size="10" fill="#2A8F82" text-anchor="end">4.93 ± 0.26</text>
+  <text x="370" y="612" font-size="10" fill="#8B8FA3">$0.043</text>
+  <text x="148" y="628" font-size="10" fill="#555" font-weight="600">🥈 Gemini 3 Flash / GPT-4o</text>
+  <text x="332" y="628" font-size="10" fill="#2A8F82" text-anchor="end">4.93 ± 0.26</text>
+  <text x="370" y="628" font-size="10" fill="#8B8FA3">$0.005/$0.015</text>
+  <text x="280" y="642" text-anchor="middle" font-size="9" fill="#8B8FA3">11 models total · ranked by mean gates</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Output 2: Cost-Quality Frontier -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="520" y="548" width="320" height="96" rx="6" fill="#FFFFFF" stroke="#2A8F82" stroke-width="1.5"/>
+  <text x="680" y="570" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A2E">Cost-Quality Pareto Frontier</text>
+  <line x1="540" y1="578" x2="820" y2="578" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="548" y="596" font-size="10" fill="#555">Pareto optimal:</text>
+  <text x="548" y="612" font-size="10" fill="#2A8F82" font-weight="600">  Gemini 3 Pro ($0.022, 5.00/5)</text>
+  <text x="548" y="628" font-size="10" fill="#2A8F82" font-weight="600">  Gemini 3 Flash ($0.005, 4.93/5)</text>
+  <text x="680" y="642" text-anchor="middle" font-size="9" fill="#8B8FA3">Opus 4.6 costs 58× Flash for lower quality</text>
+
+</svg>

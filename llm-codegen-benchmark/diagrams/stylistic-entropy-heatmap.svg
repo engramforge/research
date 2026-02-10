@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="840" height="520" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="420" y="32" text-anchor="middle" font-size="18" font-weight="600" fill="#1A1A2E">Stylistic Entropy Heatmap</text>
+  <text x="420" y="50" text-anchor="middle" font-size="11" fill="#8B8FA3">Structural variance concentration by model × quality dimension — Python/FastAPI</text>
+
+  <!-- Heatmap grid -->
+  <!-- Columns: LOC CV, Func Count σ, Nesting σ, Type Hints σ, Docstring σ, Struct Jaccard, Naming Jaccard -->
+  <!-- Rows: 11 models sorted by total variance (lowest first) -->
+
+  <!-- Column headers -->
+  <text x="295" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 295 84)">LOC CV</text>
+  <text x="355" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 355 84)">Func Count σ</text>
+  <text x="415" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 415 84)">Nesting σ</text>
+  <text x="475" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 475 84)">Type Hint CV</text>
+  <text x="535" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 535 84)">Docstring CV</text>
+  <text x="595" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 595 84)">Struct Jaccard</text>
+  <text x="655" y="84" text-anchor="middle" font-size="8" fill="#555" transform="rotate(-35 655 84)">Naming Jaccard</text>
+
+  <!-- Color scale: green (stable/low σ) → yellow → red (unstable/high σ) -->
+  <!-- For Jaccard: green = 1.0 (same), red = 0.0 (different) — inverted -->
+  <!-- Cell size: 50×28, starting at x=270, y=100 -->
+
+  <!-- Row 1: GPT-4o — LOC CV=0.000, perfect everything -->
+  <text x="260" y="118" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">GPT-4o</text>
+  <rect x="270" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="295" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.000</text>
+  <rect x="330" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="355" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="390" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="415" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="450" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="475" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="510" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="535" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="570" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="102" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="655" y="120" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+
+  <!-- Row 2: Claude Sonnet 4.5 — LOC CV=0.002 -->
+  <text x="260" y="150" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Claude Son 4.5</text>
+  <rect x="270" y="134" width="50" height="28" rx="2" fill="#2E7D32" opacity="0.85"/>
+  <text x="295" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.002</text>
+  <rect x="330" y="134" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="355" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="390" y="134" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="415" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="450" y="134" width="50" height="28" rx="2" fill="#2E7D32" opacity="0.85"/>
+  <text x="475" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.01</text>
+  <rect x="510" y="134" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="535" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="570" y="134" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="134" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="655" y="152" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+
+  <!-- Row 3: Claude Opus 4.6 — LOC CV=0.000 but gates only 3.6 -->
+  <text x="260" y="182" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Claude Opus 4.6</text>
+  <rect x="270" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="295" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.000</text>
+  <rect x="330" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="355" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="390" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="415" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="450" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="475" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="510" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="535" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="570" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="166" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="655" y="184" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+
+  <!-- Row 4: DeepSeek V3.2 — LOC CV=0.016 -->
+  <text x="260" y="214" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">DeepSeek V3.2</text>
+  <rect x="270" y="198" width="50" height="28" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="295" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.016</text>
+  <rect x="330" y="198" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="355" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="390" y="198" width="50" height="28" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="415" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.22</text>
+  <rect x="450" y="198" width="50" height="28" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="475" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.03</text>
+  <rect x="510" y="198" width="50" height="28" rx="2" fill="#2E7D32" opacity="0.85"/>
+  <text x="535" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.01</text>
+  <rect x="570" y="198" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="198" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="655" y="216" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+
+  <!-- Row 5: Gemini 3 Pro — LOC CV=0.016 -->
+  <text x="260" y="246" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Gemini 3 Pro</text>
+  <rect x="270" y="230" width="50" height="28" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="295" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.016</text>
+  <rect x="330" y="230" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="355" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="390" y="230" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="415" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="450" y="230" width="50" height="28" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="475" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.02</text>
+  <rect x="510" y="230" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="535" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="570" y="230" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="230" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="655" y="248" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+
+  <!-- Row 6: Gemini 2.5 Flash — LOC CV=0.022 -->
+  <text x="260" y="278" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Gemini 2.5 Flash</text>
+  <rect x="270" y="262" width="50" height="28" rx="2" fill="#558B2F" opacity="0.85"/>
+  <text x="295" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.022</text>
+  <rect x="330" y="262" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="355" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="390" y="262" width="50" height="28" rx="2" fill="#558B2F" opacity="0.85"/>
+  <text x="415" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.22</text>
+  <rect x="450" y="262" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="475" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.10</text>
+  <rect x="510" y="262" width="50" height="28" rx="2" fill="#558B2F" opacity="0.85"/>
+  <text x="535" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.04</text>
+  <rect x="570" y="262" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="262" width="50" height="28" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="655" y="280" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.87</text>
+
+  <!-- Row 7: Qwen3-Coder — LOC CV=0.061 -->
+  <text x="260" y="310" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Qwen3-Coder</text>
+  <rect x="270" y="294" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="295" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.061</text>
+  <rect x="330" y="294" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="355" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="390" y="294" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="415" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="450" y="294" width="50" height="28" rx="2" fill="#558B2F" opacity="0.85"/>
+  <text x="475" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.06</text>
+  <rect x="510" y="294" width="50" height="28" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="535" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.02</text>
+  <rect x="570" y="294" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="595" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+  <rect x="630" y="294" width="50" height="28" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="655" y="312" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">1.00</text>
+
+  <!-- Row 8: GPT-4o-mini — LOC CV=0.116 (highest variance) -->
+  <text x="260" y="342" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">GPT-4o-mini</text>
+  <rect x="270" y="326" width="50" height="28" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="295" y="344" text-anchor="middle" font-size="8" fill="#333" font-weight="600">0.116</text>
+  <rect x="330" y="326" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="355" y="344" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.35</text>
+  <rect x="390" y="326" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="415" y="344" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="450" y="326" width="50" height="28" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="475" y="344" text-anchor="middle" font-size="8" fill="#333" font-weight="600">0.15</text>
+  <rect x="510" y="326" width="50" height="28" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="535" y="344" text-anchor="middle" font-size="8" fill="#333" font-weight="600">0.12</text>
+  <rect x="570" y="326" width="50" height="28" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="595" y="344" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.88</text>
+  <rect x="630" y="326" width="50" height="28" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="655" y="344" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.93</text>
+
+  <!-- Row 9: Gemini 3 Flash — LOC CV=0.132 -->
+  <text x="260" y="374" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Gemini 3 Flash</text>
+  <rect x="270" y="358" width="50" height="28" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="295" y="376" text-anchor="middle" font-size="8" fill="#333" font-weight="600">0.132</text>
+  <rect x="330" y="358" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="355" y="376" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="390" y="358" width="50" height="28" rx="2" fill="#558B2F" opacity="0.85"/>
+  <text x="415" y="376" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.00</text>
+  <rect x="450" y="358" width="50" height="28" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="475" y="376" text-anchor="middle" font-size="8" fill="#333" font-weight="600">0.16</text>
+  <rect x="510" y="358" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="535" y="376" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.09</text>
+  <rect x="570" y="358" width="50" height="28" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="595" y="376" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.91</text>
+  <rect x="630" y="358" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="655" y="376" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.83</text>
+
+  <!-- Row 10: Gemini 2.5 Pro — LOC CV=0.191 -->
+  <text x="260" y="406" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">Gemini 2.5 Pro</text>
+  <rect x="270" y="390" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="295" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.191</text>
+  <rect x="330" y="390" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="355" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.71</text>
+  <rect x="390" y="390" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="415" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="450" y="390" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="475" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.22</text>
+  <rect x="510" y="390" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="535" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.18</text>
+  <rect x="570" y="390" width="50" height="28" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="595" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.93</text>
+  <rect x="630" y="390" width="50" height="28" rx="2" fill="#D84315" opacity="0.85"/>
+  <text x="655" y="408" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.66</text>
+
+  <!-- Row 11: GPT-5.2 — LOC CV=0.200 -->
+  <text x="260" y="438" text-anchor="end" font-size="10" fill="#1A1A2E" font-weight="500">GPT-5.2</text>
+  <rect x="270" y="422" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="295" y="440" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.200</text>
+  <rect x="330" y="422" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="355" y="440" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="390" y="422" width="50" height="28" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="415" y="440" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.45</text>
+  <rect x="450" y="422" width="50" height="28" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="475" y="440" text-anchor="middle" font-size="8" fill="#333" font-weight="600">0.14</text>
+  <rect x="510" y="422" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="535" y="440" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.19</text>
+  <rect x="570" y="422" width="50" height="28" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="595" y="440" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.84</text>
+  <rect x="630" y="422" width="50" height="28" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="655" y="440" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="600">0.90</text>
+
+  <!-- Color legend -->
+  <text x="720" y="115" font-size="10" font-weight="600" fill="#1A1A2E">Variance Scale</text>
+  <rect x="720" y="124" width="24" height="14" rx="2" fill="#1B5E20" opacity="0.85"/>
+  <text x="750" y="135" font-size="8" fill="#555">0.00 (stable)</text>
+  <rect x="720" y="142" width="24" height="14" rx="2" fill="#388E3C" opacity="0.85"/>
+  <text x="750" y="153" font-size="8" fill="#555">0.01-0.05</text>
+  <rect x="720" y="160" width="24" height="14" rx="2" fill="#689F38" opacity="0.85"/>
+  <text x="750" y="171" font-size="8" fill="#555">0.05-0.10</text>
+  <rect x="720" y="178" width="24" height="14" rx="2" fill="#9E9D24" opacity="0.85"/>
+  <text x="750" y="189" font-size="8" fill="#555">0.10-0.15</text>
+  <rect x="720" y="196" width="24" height="14" rx="2" fill="#F9A825" opacity="0.85"/>
+  <text x="750" y="207" font-size="8" fill="#555">0.15-0.20</text>
+  <rect x="720" y="214" width="24" height="14" rx="2" fill="#EF6C00" opacity="0.85"/>
+  <text x="750" y="225" font-size="8" fill="#555">0.20-0.30</text>
+  <rect x="720" y="232" width="24" height="14" rx="2" fill="#D84315" opacity="0.85"/>
+  <text x="750" y="243" font-size="8" fill="#555">&gt;0.30 (unstable)</text>
+
+  <!-- Insight callout -->
+  <rect x="700" y="320" width="126" height="100" rx="6" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="710" y="338" font-size="8" font-weight="600" fill="#E09600">Key pattern:</text>
+  <text x="710" y="354" font-size="8" fill="#555">Top 3 models produce</text>
+  <text x="710" y="368" font-size="8" fill="#555">identical code every</text>
+  <text x="710" y="382" font-size="8" fill="#555">run. Bottom 3 show</text>
+  <text x="710" y="396" font-size="8" fill="#555">variance across ALL</text>
+  <text x="710" y="410" font-size="8" fill="#555">dimensions.</text>
+
+  <!-- Divider between stable and variable models -->
+  <line x1="268" y1="293" x2="682" y2="293" stroke="#E09600" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="695" y="290" font-size="7" fill="#E09600">← stable</text>
+  <text x="695" y="302" font-size="7" fill="#E09600">  variable →</text>
+
+  <!-- Footer -->
+  <text x="420" y="488" text-anchor="middle" font-size="9" fill="#8B8FA3">Sorted by total variance (most stable at top)  •  Jaccard columns: 1.0=identical, lower=divergent  •  CV/σ columns: 0=stable, higher=variable</text>
+  <text x="420" y="504" text-anchor="middle" font-size="9" fill="#8B8FA3">Data: 165 entropy-controlled runs (n=5 per cell, smoke tests excluded)</text>
+
+</svg>

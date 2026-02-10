@@ -1,0 +1,2840 @@
+{
+  "claude-opus-4.6|csharp": {
+    "model": "claude-opus-4.6",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 306.8,
+        "std": 0.45,
+        "min": 306,
+        "max": 307,
+        "cv": 0.001
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "claude-opus-4.6|java": {
+    "model": "claude-opus-4.6",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 309.0,
+        "std": 0.0,
+        "min": 309,
+        "max": 309,
+        "cv": 0.0
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "claude-opus-4.6|python": {
+    "model": "claude-opus-4.6",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 223.0,
+        "std": 0.0,
+        "min": 223,
+        "max": 223,
+        "cv": 0.0
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 15.0,
+        "std": 0.0,
+        "min": 15,
+        "max": 15,
+        "cv": 0.0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.36,
+        "std": 0.0,
+        "min": 0.36,
+        "max": 0.36,
+        "cv": 0.0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.0,
+        "min": 0.91,
+        "max": 0.91,
+        "cv": 0.0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 3.6,
+        "std": 0.89,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.248
+      },
+      "perfect_rate": 0.2
+    }
+  },
+  "claude-sonnet-4.5|csharp": {
+    "model": "claude-sonnet-4.5",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 319.2,
+        "std": 3.03,
+        "min": 314,
+        "max": 322,
+        "cv": 0.01
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "claude-sonnet-4.5|java": {
+    "model": "claude-sonnet-4.5",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 320.4,
+        "std": 3.58,
+        "min": 314,
+        "max": 322,
+        "cv": 0.011
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "claude-sonnet-4.5|python": {
+    "model": "claude-sonnet-4.5",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 239.8,
+        "std": 0.45,
+        "min": 239,
+        "max": 240,
+        "cv": 0.002
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 15.0,
+        "std": 0.0,
+        "min": 15,
+        "max": 15,
+        "cv": 0.0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.36,
+        "std": 0.0,
+        "min": 0.36,
+        "max": 0.36,
+        "cv": 0.0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.0,
+        "min": 0.91,
+        "max": 0.91,
+        "cv": 0.0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      },
+      "perfect_rate": 0.8
+    }
+  },
+  "cloud:deepseek-v3.2|csharp": {
+    "model": "cloud:deepseek-v3.2",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 245.0,
+        "std": 96.78,
+        "min": 139,
+        "max": 318,
+        "cv": 0.395
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 8.2,
+        "std": 1.1,
+        "min": 7,
+        "max": 9,
+        "cv": 0.134
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.67,
+        "std": 0.28,
+        "min": 0.46,
+        "max": 1.0,
+        "cv": 0.418
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.85,
+        "std": 0.13,
+        "min": 0.75,
+        "max": 1.0,
+        "cv": 0.152
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 2.74,
+        "min": 0.0,
+        "max": 5.0,
+        "cv": 0.913
+      },
+      "perfect_rate": 0.6
+    }
+  },
+  "cloud:deepseek-v3.2|java": {
+    "model": "cloud:deepseek-v3.2",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 306.6,
+        "std": 0.89,
+        "min": 306,
+        "max": 308,
+        "cv": 0.003
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.2,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.106
+      },
+      "perfect_rate": 0.2
+    }
+  },
+  "cloud:deepseek-v3.2|python": {
+    "model": "cloud:deepseek-v3.2",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 234.8,
+        "std": 3.7,
+        "min": 231,
+        "max": 240,
+        "cv": 0.016
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 15.0,
+        "std": 0.0,
+        "min": 15,
+        "max": 15,
+        "cv": 0.0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.36,
+        "std": 0.0,
+        "min": 0.36,
+        "max": 0.36,
+        "cv": 0.0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.0,
+        "min": 0.91,
+        "max": 0.91,
+        "cv": 0.0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.4,
+        "std": 0.55,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.124
+      },
+      "perfect_rate": 0.4
+    }
+  },
+  "cloud:qwen3-coder-next|csharp": {
+    "model": "cloud:qwen3-coder-next",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 246.0,
+        "std": 1.87,
+        "min": 243,
+        "max": 248,
+        "cv": 0.008
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.6,
+        "std": 0.55,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.119
+      },
+      "perfect_rate": 0.6
+    }
+  },
+  "cloud:qwen3-coder-next|java": {
+    "model": "cloud:qwen3-coder-next",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 254.0,
+        "std": 1.73,
+        "min": 253,
+        "max": 257,
+        "cv": 0.007
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 3.4,
+        "std": 0.89,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.263
+      },
+      "perfect_rate": 0.2
+    }
+  },
+  "cloud:qwen3-coder-next|python": {
+    "model": "cloud:qwen3-coder-next",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 217.2,
+        "std": 13.29,
+        "min": 202,
+        "max": 229,
+        "cv": 0.061
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 15.0,
+        "std": 0.0,
+        "min": 15,
+        "max": 15,
+        "cv": 0.0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.36,
+        "std": 0.0,
+        "min": 0.36,
+        "max": 0.36,
+        "cv": 0.0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.0,
+        "min": 0.91,
+        "max": 0.91,
+        "cv": 0.0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.2,
+        "std": 1.1,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.261
+      },
+      "perfect_rate": 0.6
+    }
+  },
+  "gemini:gemini-2.5-flash|csharp": {
+    "model": "gemini:gemini-2.5-flash",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 320.6,
+        "std": 6.19,
+        "min": 314,
+        "max": 329,
+        "cv": 0.019
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 3.6,
+        "std": 0.55,
+        "min": 3.0,
+        "max": 4.0,
+        "cv": 0.152
+      },
+      "perfect_rate": 0.0
+    }
+  },
+  "gemini:gemini-2.5-flash|java": {
+    "model": "gemini:gemini-2.5-flash",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 323.6,
+        "std": 7.8,
+        "min": 315,
+        "max": 332,
+        "cv": 0.024
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 3.6,
+        "std": 0.55,
+        "min": 3.0,
+        "max": 4.0,
+        "cv": 0.152
+      },
+      "perfect_rate": 0.0
+    }
+  },
+  "gemini:gemini-2.5-flash|python": {
+    "model": "gemini:gemini-2.5-flash",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 235.0,
+        "std": 5.15,
+        "min": 228,
+        "max": 241,
+        "cv": 0.022
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 5.6,
+        "std": 0.89,
+        "min": 4,
+        "max": 6,
+        "cv": 0.16
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 14.4,
+        "std": 1.34,
+        "min": 12,
+        "max": 15,
+        "cv": 0.093
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.32,
+        "std": 0.08,
+        "min": 0.18,
+        "max": 0.36,
+        "cv": 0.248
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.86,
+        "std": 0.12,
+        "min": 0.64,
+        "max": 0.91,
+        "cv": 0.141
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.87,
+        "std": 0.17,
+        "min": 0.67,
+        "max": 1.0,
+        "cv": 0.198
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 2.8,
+        "std": 0.45,
+        "min": 2.0,
+        "max": 3.0,
+        "cv": 0.16
+      },
+      "perfect_rate": 0.0
+    }
+  },
+  "gemini:gemini-2.5-pro|csharp": {
+    "model": "gemini:gemini-2.5-pro",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 263.0,
+        "std": 28.46,
+        "min": 236,
+        "max": 304,
+        "cv": 0.108
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 10.0,
+        "std": 1.41,
+        "min": 8,
+        "max": 11,
+        "cv": 0.141
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.96,
+        "std": 0.05,
+        "min": 0.91,
+        "max": 1.0,
+        "cv": 0.049
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.8,
+        "std": 0.09,
+        "min": 0.7,
+        "max": 1.0,
+        "cv": 0.115
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      },
+      "perfect_rate": 0.8
+    }
+  },
+  "gemini:gemini-2.5-pro|java": {
+    "model": "gemini:gemini-2.5-pro",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 314.6,
+        "std": 11.19,
+        "min": 295,
+        "max": 323,
+        "cv": 0.036
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 17.4,
+        "std": 1.34,
+        "min": 15,
+        "max": 18,
+        "cv": 0.077
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.95,
+        "std": 0.06,
+        "min": 0.88,
+        "max": 1.0,
+        "cv": 0.068
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.92,
+        "std": 0.06,
+        "min": 0.88,
+        "max": 1.0,
+        "cv": 0.061
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.2,
+        "std": 0.84,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.199
+      },
+      "perfect_rate": 0.4
+    }
+  },
+  "gemini:gemini-2.5-pro|python": {
+    "model": "gemini:gemini-2.5-pro",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 207.2,
+        "std": 39.62,
+        "min": 159,
+        "max": 238,
+        "cv": 0.191
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 5.6,
+        "std": 1.14,
+        "min": 4,
+        "max": 7,
+        "cv": 0.204
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 14.0,
+        "std": 1.41,
+        "min": 12,
+        "max": 15,
+        "cv": 0.101
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 1.8,
+        "std": 0.45,
+        "min": 1,
+        "max": 2,
+        "cv": 0.248
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.37,
+        "std": 0.05,
+        "min": 0.33,
+        "max": 0.45,
+        "cv": 0.122
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.01,
+        "min": 0.89,
+        "max": 0.91,
+        "cv": 0.01
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.93,
+        "std": 0.09,
+        "min": 0.82,
+        "max": 1.0,
+        "cv": 0.101
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.66,
+        "std": 0.25,
+        "min": 0.29,
+        "max": 1.0,
+        "cv": 0.385
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 1.41,
+        "min": 2.0,
+        "max": 5.0,
+        "cv": 0.354
+      },
+      "perfect_rate": 0.6
+    }
+  },
+  "gemini:gemini-3-flash-preview|csharp": {
+    "model": "gemini:gemini-3-flash-preview",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 247.6,
+        "std": 9.86,
+        "min": 238,
+        "max": 263,
+        "cv": 0.04
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 12.0,
+        "std": 0.0,
+        "min": 12,
+        "max": 12,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.84,
+        "std": 0.14,
+        "min": 0.73,
+        "max": 1.0,
+        "cv": 0.169
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gemini:gemini-3-flash-preview|java": {
+    "model": "gemini:gemini-3-flash-preview",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 305.4,
+        "std": 4.22,
+        "min": 298,
+        "max": 308,
+        "cv": 0.014
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.96,
+        "std": 0.06,
+        "min": 0.89,
+        "max": 1.0,
+        "cv": 0.06
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gemini:gemini-3-flash-preview|python": {
+    "model": "gemini:gemini-3-flash-preview",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 212.4,
+        "std": 16.01,
+        "min": 184,
+        "max": 222,
+        "cv": 0.075
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 5.8,
+        "std": 0.45,
+        "min": 5,
+        "max": 6,
+        "cv": 0.077
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 14.8,
+        "std": 0.45,
+        "min": 14,
+        "max": 15,
+        "cv": 0.03
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.35,
+        "std": 0.03,
+        "min": 0.3,
+        "max": 0.36,
+        "cv": 0.077
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.0,
+        "min": 0.9,
+        "max": 0.91,
+        "cv": 0.005
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.96,
+        "std": 0.05,
+        "min": 0.91,
+        "max": 1.0,
+        "cv": 0.049
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.93,
+        "std": 0.09,
+        "min": 0.83,
+        "max": 1.0,
+        "cv": 0.092
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      },
+      "perfect_rate": 0.8
+    }
+  },
+  "gemini:gemini-3-pro-preview|csharp": {
+    "model": "gemini:gemini-3-pro-preview",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 245.6,
+        "std": 9.18,
+        "min": 234,
+        "max": 257,
+        "cv": 0.037
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 10.8,
+        "std": 1.64,
+        "min": 9,
+        "max": 12,
+        "cv": 0.152
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.82,
+        "std": 0.18,
+        "min": 0.58,
+        "max": 1.0,
+        "cv": 0.214
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.84,
+        "std": 0.14,
+        "min": 0.73,
+        "max": 1.0,
+        "cv": 0.169
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gemini:gemini-3-pro-preview|java": {
+    "model": "gemini:gemini-3-pro-preview",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 306.6,
+        "std": 6.27,
+        "min": 300,
+        "max": 317,
+        "cv": 0.02
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gemini:gemini-3-pro-preview|python": {
+    "model": "gemini:gemini-3-pro-preview",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 225.2,
+        "std": 2.39,
+        "min": 222,
+        "max": 228,
+        "cv": 0.011
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 15.0,
+        "std": 0.0,
+        "min": 15,
+        "max": 15,
+        "cv": 0.0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.36,
+        "std": 0.0,
+        "min": 0.36,
+        "max": 0.36,
+        "cv": 0.0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.91,
+        "std": 0.0,
+        "min": 0.91,
+        "max": 0.91,
+        "cv": 0.0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gpt-4o|csharp": {
+    "model": "gpt-4o",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 162.6,
+        "std": 52.77,
+        "min": 139,
+        "max": 257,
+        "cv": 0.325
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 7.4,
+        "std": 0.89,
+        "min": 7,
+        "max": 9,
+        "cv": 0.121
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.78,
+        "std": 0.28,
+        "min": 0.46,
+        "max": 1.0,
+        "cv": 0.36
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.9,
+        "std": 0.13,
+        "min": 0.75,
+        "max": 1.0,
+        "cv": 0.143
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      },
+      "perfect_rate": 0.8
+    }
+  },
+  "gpt-4o|java": {
+    "model": "gpt-4o",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 219.6,
+        "std": 62.44,
+        "min": 174,
+        "max": 288,
+        "cv": 0.284
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 16.2,
+        "std": 1.64,
+        "min": 15,
+        "max": 18,
+        "cv": 0.101
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.78,
+        "std": 0.19,
+        "min": 0.62,
+        "max": 1.0,
+        "cv": 0.25
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.93,
+        "std": 0.06,
+        "min": 0.88,
+        "max": 1.0,
+        "cv": 0.066
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gpt-4o|python": {
+    "model": "gpt-4o",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 210.0,
+        "std": 0.0,
+        "min": 210,
+        "max": 210,
+        "cv": 0.0
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 15.0,
+        "std": 0.0,
+        "min": 15,
+        "max": 15,
+        "cv": 0.0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.36,
+        "std": 0.0,
+        "min": 0.36,
+        "max": 0.36,
+        "cv": 0.0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.8,
+        "std": 0.0,
+        "min": 0.8,
+        "max": 0.8,
+        "cv": 0.0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gpt-4o-mini|csharp": {
+    "model": "gpt-4o-mini",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 275.8,
+        "std": 21.16,
+        "min": 254,
+        "max": 311,
+        "cv": 0.077
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gpt-4o-mini|java": {
+    "model": "gpt-4o-mini",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 265.0,
+        "std": 0.0,
+        "min": 265,
+        "max": 265,
+        "cv": 0.0
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gpt-4o-mini|python": {
+    "model": "gpt-4o-mini",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 172.8,
+        "std": 21.97,
+        "min": 158,
+        "max": 207,
+        "cv": 0.127
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 5.4,
+        "std": 0.55,
+        "min": 5,
+        "max": 6,
+        "cv": 0.101
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 13.0,
+        "std": 1.41,
+        "min": 12,
+        "max": 15,
+        "cv": 0.109
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.38,
+        "std": 0.01,
+        "min": 0.36,
+        "max": 0.4,
+        "cv": 0.037
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.93,
+        "std": 0.1,
+        "min": 0.8,
+        "max": 1.0,
+        "cv": 0.105
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.85,
+        "std": 0.12,
+        "min": 0.73,
+        "max": 1.0,
+        "cv": 0.138
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.9,
+        "std": 0.09,
+        "min": 0.83,
+        "max": 1.0,
+        "cv": 0.096
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 0.8,
+        "std": 1.1,
+        "min": 0.0,
+        "max": 2.0,
+        "cv": 1.369
+      },
+      "perfect_rate": 0.0
+    }
+  },
+  "gpt-5.2|csharp": {
+    "model": "gpt-5.2",
+    "language": "csharp",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 277.8,
+        "std": 10.76,
+        "min": 272,
+        "max": 297,
+        "cv": 0.039
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4,
+        "max": 4,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "cv": 0.0
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4.0,
+        "max": 4.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 0.0
+    }
+  },
+  "gpt-5.2|java": {
+    "model": "gpt-5.2",
+    "language": "java",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 317.8,
+        "std": 7.16,
+        "min": 305,
+        "max": 321,
+        "cv": 0.023
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 18.8,
+        "std": 0.45,
+        "min": 18,
+        "max": 19,
+        "cv": 0.024
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 0.0,
+        "min": 3,
+        "max": 3,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "cv": 0
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.96,
+        "std": 0.06,
+        "min": 0.89,
+        "max": 1.0,
+        "cv": 0.06
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.98,
+        "std": 0.03,
+        "min": 0.94,
+        "max": 1.0,
+        "cv": 0.03
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      },
+      "perfect_rate": 1.0
+    }
+  },
+  "gpt-5.2|python": {
+    "model": "gpt-5.2",
+    "language": "python",
+    "n_runs": 5,
+    "structural_stability": {
+      "loc": {
+        "n": 5,
+        "mean": 202.4,
+        "std": 40.56,
+        "min": 158,
+        "max": 234,
+        "cv": 0.2
+      },
+      "function_count": {
+        "n": 5,
+        "mean": 5.6,
+        "std": 0.55,
+        "min": 5,
+        "max": 6,
+        "cv": 0.098
+      },
+      "cyclomatic_complexity": {
+        "n": 5,
+        "mean": 13.8,
+        "std": 1.64,
+        "min": 12,
+        "max": 15,
+        "cv": 0.119
+      },
+      "max_nesting_depth": {
+        "n": 5,
+        "mean": 2.0,
+        "std": 0.0,
+        "min": 2,
+        "max": 2,
+        "cv": 0.0
+      }
+    },
+    "quality_stability": {
+      "type_annotation_coverage": {
+        "n": 5,
+        "mean": 0.37,
+        "std": 0.01,
+        "min": 0.36,
+        "max": 0.38,
+        "cv": 0.03
+      },
+      "docstring_density": {
+        "n": 5,
+        "mean": 0.95,
+        "std": 0.05,
+        "min": 0.91,
+        "max": 1.0,
+        "cv": 0.052
+      }
+    },
+    "fingerprint_similarity": {
+      "structure_jaccard": {
+        "n": 10,
+        "mean": 0.84,
+        "std": 0.14,
+        "min": 0.73,
+        "max": 1.0,
+        "cv": 0.169
+      },
+      "naming_jaccard": {
+        "n": 10,
+        "mean": 0.9,
+        "std": 0.09,
+        "min": 0.83,
+        "max": 1.0,
+        "cv": 0.096
+      }
+    },
+    "gate_consistency": {
+      "gates_passed": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 2.74,
+        "min": 0.0,
+        "max": 5.0,
+        "cv": 0.913
+      },
+      "perfect_rate": 0.6
+    }
+  }
+}

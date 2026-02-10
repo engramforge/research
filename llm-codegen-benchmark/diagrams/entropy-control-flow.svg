@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
-  <rect width="720" height="580" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="720" height="680" fill="#FFFFFF"/>
 
   <!-- Title -->
   <text x="360" y="36" text-anchor="middle" font-size="18" font-weight="600" fill="#1A1A2E">Entropy Control Process</text>
@@ -102,5 +102,22 @@
   <!-- ═══════════════════════════════════════════ -->
   <rect x="244" y="536" width="232" height="32" rx="6" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="1.5"/>
   <text x="360" y="557" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Report: mean ± std (CI)</text>
+
+  <!-- Arrow: Report → Statistical Analysis -->
+  <path d="M360 568 L360 600" stroke="#4A6FA5" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Step 7: Statistical Analysis -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="204" y="600" width="312" height="52" rx="6" fill="#4A6FA5" stroke="#3A5F95" stroke-width="1.5"/>
+  <text x="360" y="622" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">Statistical Analysis</text>
+  <text x="360" y="638" text-anchor="middle" font-size="10" fill="#D6E0F0">KW · MWU · Friedman · Pareto</text>
+
+  <!-- Annotation -->
+  <rect x="540" y="600" width="148" height="52" rx="4" fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="614" y="618" text-anchor="middle" font-size="9" fill="#4A6FA5">All model×task cells</text>
+  <text x="614" y="632" text-anchor="middle" font-size="9" fill="#4A6FA5">aggregated → hypothesis</text>
+  <text x="614" y="646" text-anchor="middle" font-size="9" fill="#4A6FA5">tests at α = 0.05</text>
+  <line x1="516" y1="626" x2="540" y2="626" stroke="#4A6FA5" stroke-width="1" stroke-dasharray="4 2"/>
 
 </svg>

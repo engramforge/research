@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="560" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="600" fill="#1A1A2E">Cost-Quality Frontier</text>
+  <text x="400" y="50" text-anchor="middle" font-size="11" fill="#8B8FA3">Gate pass rate vs. cost per run · Feb 2026 · entropy-controlled</text>
+
+  <defs>
+    <marker id="ax" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Chart area: x=100..720, y=80..460 -->
+  <!-- X axis: cost (log scale conceptual) -->
+  <!-- Y axis: gates passed (0..5) -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Grid background -->
+  <rect x="100" y="80" width="620" height="380" rx="0" fill="#FAFAFA" stroke="#E8E8E8" stroke-width="1"/>
+
+  <!-- Horizontal grid lines (gates 1-5) -->
+  <line x1="100" y1="156" x2="720" y2="156" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="100" y1="232" x2="720" y2="232" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="100" y1="308" x2="720" y2="308" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="100" y1="384" x2="720" y2="384" stroke="#F0F0F0" stroke-width="1"/>
+
+  <!-- Y axis labels -->
+  <text x="90" y="464" text-anchor="end" font-size="10" fill="#555">0</text>
+  <text x="90" y="388" text-anchor="end" font-size="10" fill="#555">1</text>
+  <text x="90" y="312" text-anchor="end" font-size="10" fill="#555">2</text>
+  <text x="90" y="236" text-anchor="end" font-size="10" fill="#555">3</text>
+  <text x="90" y="160" text-anchor="end" font-size="10" fill="#555">4</text>
+  <text x="90" y="84" text-anchor="end" font-size="10" fill="#555">5</text>
+  <text x="40" y="280" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A2E" transform="rotate(-90 40 280)">Gates Passed (mean)</text>
+
+  <!-- X axis: log-ish scale: $0, $0.001, $0.005, $0.015, $0.05, $0.30 -->
+  <!-- Positions: 100, 180, 280, 380, 500, 700 -->
+  <text x="100" y="480" text-anchor="middle" font-size="9" fill="#555">$0</text>
+  <text x="180" y="480" text-anchor="middle" font-size="9" fill="#555">$0.001</text>
+  <text x="280" y="480" text-anchor="middle" font-size="9" fill="#555">$0.005</text>
+  <text x="380" y="480" text-anchor="middle" font-size="9" fill="#555">$0.015</text>
+  <text x="500" y="480" text-anchor="middle" font-size="9" fill="#555">$0.05</text>
+  <text x="700" y="480" text-anchor="middle" font-size="9" fill="#555">$0.30</text>
+  <text x="410" y="500" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A2E">Cost per Run (USD)</text>
+
+  <!-- Vertical grid lines -->
+  <line x1="180" y1="80" x2="180" y2="460" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="280" y1="80" x2="280" y2="460" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="380" y1="80" x2="380" y2="460" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="500" y1="80" x2="500" y2="460" stroke="#F0F0F0" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Pareto frontier line -->
+  <!-- Points: Qwen3(100, ~4.07) → Gem3Flash(280, 5.0) -->
+  <!-- qwen3: x=100, y=80+380*(1-4.07/5)=80+380*0.186=150.7 -->
+  <!-- gem3flash: x=280, y=80 -->
+  <!-- ═══════════════════════════════════════════ -->
+  <path d="M100 151 L280 80" stroke="#2A8F82" stroke-width="2" fill="none" stroke-dasharray="8 4"/>
+  <text x="175" y="106" text-anchor="middle" font-size="9" font-weight="600" fill="#2A8F82">Pareto frontier</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Data points -->
+  <!-- Y formula: y = 80 + 380 * (1 - gates/5) -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Free models: NONE — Ollama Cloud is subscription, not free -->
+
+  <!-- Subscription models (Ollama Cloud): amortized ~$0.67/run on Pro -->
+  <!-- Qwen3-Coder: 4.07 → y=151, x≈620 (near $0.67 zone between $0.05 and $0.30) -->
+  <circle cx="600" cy="151" r="7" fill="#F5A623" stroke="#E09600" stroke-width="1.5"/>
+  <text x="612" y="146" font-size="9" font-weight="600" fill="#1A1A2E">Qwen3 †sub</text>
+
+  <!-- DeepSeek V3.2: 3.87 → y=166, x≈610 -->
+  <circle cx="610" cy="166" r="7" fill="#F5A623" stroke="#E09600" stroke-width="1.5"/>
+  <text x="622" y="174" font-size="9" font-weight="600" fill="#1A1A2E">DeepSeek †sub</text>
+
+  <!-- GPT-4o-mini: $0.001, 3.60 → x=180, y=186 -->
+  <circle cx="180" cy="186" r="7" fill="#4A6FA5" stroke="#3A5F95" stroke-width="1.5"/>
+  <text x="192" y="192" font-size="9" font-weight="600" fill="#1A1A2E">GPT-4o-mini</text>
+
+  <!-- Gemini 2.5 Flash: $0.007, 3.33 → x=280, y=207 -->
+  <circle cx="275" cy="207" r="6" fill="#8B8FA3" stroke="#777" stroke-width="1.5"/>
+  <text x="260" y="224" font-size="8" fill="#555">Gem 2.5 Flash</text>
+
+  <!-- Gemini 3 Flash: $0.005, 4.93 → x=280, y=85 -->
+  <circle cx="280" cy="85" r="8" fill="#2A8F82" stroke="#1A7F72" stroke-width="2"/>
+  <text x="280" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#1A7F72">Gem 3 Flash</text>
+
+  <!-- Claude Haiku 4.5: $0.007, 3.50 → x=295, y=194 -->
+  <circle cx="300" cy="194" r="5" fill="#8B8FA3" stroke="#777" stroke-width="1"/>
+  <text x="312" y="190" font-size="8" fill="#555">Haiku 4.5</text>
+
+  <!-- Gemini 2.5 Pro: $0.018, 4.33 → x=360, y=131 -->
+  <circle cx="355" cy="131" r="6" fill="#8B8FA3" stroke="#777" stroke-width="1.5"/>
+  <text x="340" y="125" font-size="8" fill="#555">Gem 2.5 Pro</text>
+
+  <!-- GPT-4o: $0.015, 4.93 → x=380, y=85 -->
+  <circle cx="380" cy="85" r="7" fill="#2A8F82" stroke="#1A7F72" stroke-width="1.5"/>
+  <text x="392" y="80" font-size="9" font-weight="600" fill="#1A1A2E">GPT-4o</text>
+
+  <!-- Gemini 3 Pro: $0.022, 5.00 → x=410, y=80 ★ -->
+  <circle cx="410" cy="82" r="9" fill="#2A8F82" stroke="#1A7F72" stroke-width="2"/>
+  <text x="410" y="100" text-anchor="middle" font-size="10" font-weight="700" fill="#1A7F72">★ Gem 3 Pro</text>
+
+  <!-- GPT-5.2: $0.026, 4.00 → x=430, y=156 -->
+  <circle cx="430" cy="156" r="7" fill="#4A6FA5" stroke="#3A5F95" stroke-width="1.5"/>
+  <text x="442" y="151" font-size="9" font-weight="600" fill="#1A1A2E">GPT-5.2</text>
+
+  <!-- Claude Sonnet 4.5: $0.043, 4.93 → x=485, y=85 -->
+  <circle cx="485" cy="86" r="8" fill="#4A6FA5" stroke="#3A5F95" stroke-width="1.5"/>
+  <text x="497" y="82" font-size="9" font-weight="600" fill="#1A1A2E">Sonnet 4.5</text>
+
+  <!-- Claude Opus 4.6: $0.290, 4.53 → x=695, y=116 -->
+  <circle cx="695" cy="116" r="7" fill="#C0392B" stroke="#A93226" stroke-width="1.5"/>
+  <text x="683" y="136" text-anchor="end" font-size="9" font-weight="600" fill="#C0392B">Opus 4.6</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Annotation: 59× cost callout -->
+  <!-- ═══════════════════════════════════════════ -->
+  <path d="M302 85 L670 116" stroke="#C0392B" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
+  <rect x="440" y="102" width="130" height="22" rx="4" fill="#FDE8E8" stroke="#C0392B" stroke-width="1"/>
+  <text x="505" y="117" text-anchor="middle" font-size="9" font-weight="600" fill="#C0392B">58× cost, lower quality</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Legend -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="100" y="515" width="620" height="36" rx="4" fill="#FAFAFA" stroke="#E8E8E8" stroke-width="1"/>
+  <circle cx="128" cy="533" r="5" fill="#2A8F82"/>
+  <text x="138" y="537" font-size="9" fill="#555">Per-token (Pareto)</text>
+  <circle cx="248" cy="533" r="5" fill="#4A6FA5"/>
+  <text x="258" y="537" font-size="9" fill="#555">Per-token (dominated)</text>
+  <circle cx="388" cy="533" r="5" fill="#F5A623"/>
+  <text x="398" y="537" font-size="9" fill="#555">†sub = Ollama Cloud (~$0.67/run Pro)</text>
+  <circle cx="598" cy="533" r="5" fill="#C0392B"/>
+  <text x="608" y="537" font-size="9" fill="#555">Cost outlier</text>
+
+</svg>

@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 510" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="780" height="510" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="390" y="32" text-anchor="middle" font-size="18" font-weight="600" fill="#1A1A2E">Per-Gate Pass Rate Heatmap</text>
+  <text x="390" y="50" text-anchor="middle" font-size="11" fill="#8B8FA3">Entropy-controlled · 165 runs · 11 models × n=5 · Feb 2026</text>
+
+  <!-- Column headers -->
+  <text x="305" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1A2E">Diff Ext</text>
+  <text x="395" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1A2E">Applied</text>
+  <text x="485" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1A2E">Tests</text>
+  <text x="575" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1A2E">Types</text>
+  <text x="665" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1A2E">Lint</text>
+  <text x="735" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1A2E">n</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Heatmap rows — color: green (#E8F5E9/#2A8F82) for ≥90%, -->
+  <!-- yellow (#FFF8E1/#F5A623) for 60-89%, red (#FDE8E8/#C0392B) for <60% -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Row 1: Gemini 3 Pro Preview — 🥇 Perfect across all gates -->
+  <text x="15" y="102" font-size="10" font-weight="600" fill="#1A1A2E">🥇 Gemini 3 Pro</text>
+  <rect x="265" y="88" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="103" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="355" y="88" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="103" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="445" y="88" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="485" y="103" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="535" y="88" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="575" y="103" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="625" y="88" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="665" y="103" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <text x="735" y="103" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 2: Claude Sonnet 4.5 -->
+  <text x="15" y="132" font-size="10" font-weight="600" fill="#1A1A2E">🥈 Claude Sonnet 4.5</text>
+  <rect x="265" y="118" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="355" y="118" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="445" y="118" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="485" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">93%</text>
+  <rect x="535" y="118" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="575" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="625" y="118" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="665" y="133" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <text x="735" y="133" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 3: Gemini 3 Flash Preview -->
+  <text x="15" y="162" font-size="10" font-weight="600" fill="#1A1A2E">🥈 Gemini 3 Flash</text>
+  <rect x="265" y="148" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="355" y="148" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="445" y="148" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="485" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">93%</text>
+  <rect x="535" y="148" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="575" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="625" y="148" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="665" y="163" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <text x="735" y="163" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 4: GPT-4o -->
+  <text x="15" y="192" font-size="10" font-weight="600" fill="#1A1A2E">🥈 GPT-4o</text>
+  <rect x="265" y="178" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="193" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="355" y="178" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="193" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="445" y="178" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="485" y="193" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <rect x="535" y="178" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="575" y="193" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">93%</text>
+  <rect x="625" y="178" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="665" y="193" text-anchor="middle" font-size="10" font-weight="600" fill="#1A7F72">100%</text>
+  <text x="735" y="193" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 5: Claude Opus 4.6 -->
+  <text x="15" y="222" font-size="10" fill="#1A1A2E">Claude Opus 4.6</text>
+  <rect x="265" y="208" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="223" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="355" y="208" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="223" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="445" y="208" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="485" y="223" text-anchor="middle" font-size="10" fill="#E09600">80%</text>
+  <rect x="535" y="208" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="575" y="223" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="625" y="208" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="665" y="223" text-anchor="middle" font-size="10" fill="#E09600">73%</text>
+  <text x="735" y="223" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 6: Gemini 2.5 Pro -->
+  <text x="15" y="252" font-size="10" fill="#1A1A2E">Gemini 2.5 Pro</text>
+  <rect x="265" y="238" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="253" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="355" y="238" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="253" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="445" y="238" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="485" y="253" text-anchor="middle" font-size="10" fill="#E09600">67%</text>
+  <rect x="535" y="238" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="575" y="253" text-anchor="middle" font-size="10" fill="#E09600">73%</text>
+  <rect x="625" y="238" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="665" y="253" text-anchor="middle" font-size="10" fill="#1A7F72">93%</text>
+  <text x="735" y="253" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 7: Qwen3-Coder-Next -->
+  <text x="15" y="282" font-size="10" fill="#1A1A2E">Qwen3-Coder-Next</text>
+  <rect x="265" y="268" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="283" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="355" y="268" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="283" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="445" y="268" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="485" y="283" text-anchor="middle" font-size="10" fill="#E09600">60%</text>
+  <rect x="535" y="268" width="80" height="22" rx="3" fill="#FDE8E8" stroke="#C0392B" stroke-width="1"/>
+  <text x="575" y="283" text-anchor="middle" font-size="10" fill="#C0392B">47%</text>
+  <rect x="625" y="268" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="665" y="283" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <text x="735" y="283" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 8: GPT-5.2 -->
+  <text x="15" y="312" font-size="10" fill="#1A1A2E">GPT-5.2</text>
+  <rect x="265" y="298" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="305" y="313" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <rect x="355" y="298" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="395" y="313" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <rect x="445" y="298" width="80" height="22" rx="3" fill="#FDE8E8" stroke="#C0392B" stroke-width="1"/>
+  <text x="485" y="313" text-anchor="middle" font-size="10" fill="#C0392B">53%</text>
+  <rect x="535" y="298" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="575" y="313" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <rect x="625" y="298" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="665" y="313" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <text x="735" y="313" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 9: DeepSeek V3.2 -->
+  <text x="15" y="342" font-size="10" fill="#1A1A2E">DeepSeek V3.2</text>
+  <rect x="265" y="328" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="305" y="343" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <rect x="355" y="328" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="395" y="343" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <rect x="445" y="328" width="80" height="22" rx="3" fill="#FDE8E8" stroke="#C0392B" stroke-width="1"/>
+  <text x="485" y="343" text-anchor="middle" font-size="10" fill="#C0392B">40%</text>
+  <rect x="535" y="328" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="575" y="343" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <rect x="625" y="328" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="665" y="343" text-anchor="middle" font-size="10" fill="#E09600">87%</text>
+  <text x="735" y="343" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 10: GPT-4o-mini -->
+  <text x="15" y="372" font-size="10" fill="#1A1A2E">GPT-4o-mini</text>
+  <rect x="265" y="358" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="305" y="373" text-anchor="middle" font-size="10" fill="#E09600">80%</text>
+  <rect x="355" y="358" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="395" y="373" text-anchor="middle" font-size="10" fill="#E09600">80%</text>
+  <rect x="445" y="358" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="485" y="373" text-anchor="middle" font-size="10" fill="#E09600">67%</text>
+  <rect x="535" y="358" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="575" y="373" text-anchor="middle" font-size="10" fill="#E09600">67%</text>
+  <rect x="625" y="358" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="665" y="373" text-anchor="middle" font-size="10" fill="#E09600">67%</text>
+  <text x="735" y="373" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- Row 11: Gemini 2.5 Flash -->
+  <text x="15" y="402" font-size="10" fill="#1A1A2E">Gemini 2.5 Flash</text>
+  <rect x="265" y="388" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="305" y="403" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="355" y="388" width="80" height="22" rx="3" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="395" y="403" text-anchor="middle" font-size="10" fill="#1A7F72">100%</text>
+  <rect x="445" y="388" width="80" height="22" rx="3" fill="#FDE8E8" stroke="#C0392B" stroke-width="1"/>
+  <text x="485" y="403" text-anchor="middle" font-size="10" fill="#C0392B">7%</text>
+  <rect x="535" y="388" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="575" y="403" text-anchor="middle" font-size="10" fill="#E09600">60%</text>
+  <rect x="625" y="388" width="80" height="22" rx="3" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="665" y="403" text-anchor="middle" font-size="10" fill="#E09600">67%</text>
+  <text x="735" y="403" text-anchor="middle" font-size="10" fill="#8B8FA3">15</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Legend -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="100" y="430" width="580" height="38" rx="4" fill="#FAFAFA" stroke="#E8E8E8" stroke-width="1"/>
+  <rect x="120" y="440" width="24" height="14" rx="2" fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="150" y="451" font-size="9" fill="#555">≥ 90% pass</text>
+  <rect x="220" y="440" width="24" height="14" rx="2" fill="#FFF8E1" stroke="#F5A623" stroke-width="1"/>
+  <text x="250" y="451" font-size="9" fill="#555">60–89%</text>
+  <rect x="310" y="440" width="24" height="14" rx="2" fill="#FDE8E8" stroke="#C0392B" stroke-width="1"/>
+  <text x="340" y="451" font-size="9" fill="#555">&lt; 60%</text>
+  <text x="440" y="451" font-size="9" fill="#8B8FA3">All models: n=15 (5 per task × 3 tasks)</text>
+
+  <text x="390" y="478" text-anchor="middle" font-size="10" fill="#555">Key insight: Tests are the hardest gate. Diff extraction/application are easiest.</text>
+  <text x="390" y="492" text-anchor="middle" font-size="10" fill="#555">Gemini 3 Pro is the only model achieving 100% across all gates.</text>
+
+</svg>

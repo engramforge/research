@@ -1,0 +1,899 @@
+{
+  "csharp": {
+    "claude-opus-4.6": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 306.8,
+        "std": 0.45,
+        "min": 306,
+        "max": 307,
+        "cv": 0.001
+      },
+      "functions": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "claude-sonnet-4.5": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 319.2,
+        "std": 3.03,
+        "min": 314,
+        "max": 322,
+        "cv": 0.01
+      },
+      "functions": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "cloud:deepseek-v3.2": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 245.0,
+        "std": 96.78,
+        "min": 139,
+        "max": 318,
+        "cv": 0.395
+      },
+      "functions": {
+        "n": 5,
+        "mean": 8.2,
+        "std": 1.1,
+        "min": 7,
+        "max": 9,
+        "cv": 0.134
+      },
+      "gates": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 2.74,
+        "min": 0.0,
+        "max": 5.0,
+        "cv": 0.913
+      }
+    },
+    "cloud:qwen3-coder-next": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 246.0,
+        "std": 1.87,
+        "min": 243,
+        "max": 248,
+        "cv": 0.008
+      },
+      "functions": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.6,
+        "std": 0.55,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.119
+      }
+    },
+    "gemini:gemini-2.5-flash": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 320.6,
+        "std": 6.19,
+        "min": 314,
+        "max": 329,
+        "cv": 0.019
+      },
+      "functions": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 3.6,
+        "std": 0.55,
+        "min": 3.0,
+        "max": 4.0,
+        "cv": 0.152
+      }
+    },
+    "gemini:gemini-2.5-pro": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 263.0,
+        "std": 28.46,
+        "min": 236,
+        "max": 304,
+        "cv": 0.108
+      },
+      "functions": {
+        "n": 5,
+        "mean": 10.0,
+        "std": 1.41,
+        "min": 8,
+        "max": 11,
+        "cv": 0.141
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      }
+    },
+    "gemini:gemini-3-flash-preview": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 247.6,
+        "std": 9.86,
+        "min": 238,
+        "max": 263,
+        "cv": 0.04
+      },
+      "functions": {
+        "n": 5,
+        "mean": 12.0,
+        "std": 0.0,
+        "min": 12,
+        "max": 12,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gemini:gemini-3-pro-preview": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 245.6,
+        "std": 9.18,
+        "min": 234,
+        "max": 257,
+        "cv": 0.037
+      },
+      "functions": {
+        "n": 5,
+        "mean": 10.8,
+        "std": 1.64,
+        "min": 9,
+        "max": 12,
+        "cv": 0.152
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-4o": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 162.6,
+        "std": 52.77,
+        "min": 139,
+        "max": 257,
+        "cv": 0.325
+      },
+      "functions": {
+        "n": 5,
+        "mean": 7.4,
+        "std": 0.89,
+        "min": 7,
+        "max": 9,
+        "cv": 0.121
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      }
+    },
+    "gpt-4o-mini": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 275.8,
+        "std": 21.16,
+        "min": 254,
+        "max": 311,
+        "cv": 0.077
+      },
+      "functions": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-5.2": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 277.8,
+        "std": 10.76,
+        "min": 272,
+        "max": 297,
+        "cv": 0.039
+      },
+      "functions": {
+        "n": 5,
+        "mean": 9.0,
+        "std": 0.0,
+        "min": 9,
+        "max": 9,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 0.0,
+        "min": 4.0,
+        "max": 4.0,
+        "cv": 0.0
+      }
+    }
+  },
+  "java": {
+    "claude-opus-4.6": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 309.0,
+        "std": 0.0,
+        "min": 309,
+        "max": 309,
+        "cv": 0.0
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "claude-sonnet-4.5": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 320.4,
+        "std": 3.58,
+        "min": 314,
+        "max": 322,
+        "cv": 0.011
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "cloud:deepseek-v3.2": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 306.6,
+        "std": 0.89,
+        "min": 306,
+        "max": 308,
+        "cv": 0.003
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.2,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.106
+      }
+    },
+    "cloud:qwen3-coder-next": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 254.0,
+        "std": 1.73,
+        "min": 253,
+        "max": 257,
+        "cv": 0.007
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 3.4,
+        "std": 0.89,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.263
+      }
+    },
+    "gemini:gemini-2.5-flash": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 323.6,
+        "std": 7.8,
+        "min": 315,
+        "max": 332,
+        "cv": 0.024
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 3.6,
+        "std": 0.55,
+        "min": 3.0,
+        "max": 4.0,
+        "cv": 0.152
+      }
+    },
+    "gemini:gemini-2.5-pro": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 314.6,
+        "std": 11.19,
+        "min": 295,
+        "max": 323,
+        "cv": 0.036
+      },
+      "functions": {
+        "n": 5,
+        "mean": 17.4,
+        "std": 1.34,
+        "min": 15,
+        "max": 18,
+        "cv": 0.077
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.2,
+        "std": 0.84,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.199
+      }
+    },
+    "gemini:gemini-3-flash-preview": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 305.4,
+        "std": 4.22,
+        "min": 298,
+        "max": 308,
+        "cv": 0.014
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gemini:gemini-3-pro-preview": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 306.6,
+        "std": 6.27,
+        "min": 300,
+        "max": 317,
+        "cv": 0.02
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-4o": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 219.6,
+        "std": 62.44,
+        "min": 174,
+        "max": 288,
+        "cv": 0.284
+      },
+      "functions": {
+        "n": 5,
+        "mean": 16.2,
+        "std": 1.64,
+        "min": 15,
+        "max": 18,
+        "cv": 0.101
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-4o-mini": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 265.0,
+        "std": 0.0,
+        "min": 265,
+        "max": 265,
+        "cv": 0.0
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.0,
+        "std": 0.0,
+        "min": 18,
+        "max": 18,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-5.2": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 317.8,
+        "std": 7.16,
+        "min": 305,
+        "max": 321,
+        "cv": 0.023
+      },
+      "functions": {
+        "n": 5,
+        "mean": 18.8,
+        "std": 0.45,
+        "min": 18,
+        "max": 19,
+        "cv": 0.024
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    }
+  },
+  "python": {
+    "claude-opus-4.6": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 223.0,
+        "std": 0.0,
+        "min": 223,
+        "max": 223,
+        "cv": 0.0
+      },
+      "functions": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 3.6,
+        "std": 0.89,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.248
+      }
+    },
+    "claude-sonnet-4.5": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 239.8,
+        "std": 0.45,
+        "min": 239,
+        "max": 240,
+        "cv": 0.002
+      },
+      "functions": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      }
+    },
+    "cloud:deepseek-v3.2": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 234.8,
+        "std": 3.7,
+        "min": 231,
+        "max": 240,
+        "cv": 0.016
+      },
+      "functions": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.4,
+        "std": 0.55,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.124
+      }
+    },
+    "cloud:qwen3-coder-next": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 217.2,
+        "std": 13.29,
+        "min": 202,
+        "max": 229,
+        "cv": 0.061
+      },
+      "functions": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.2,
+        "std": 1.1,
+        "min": 3.0,
+        "max": 5.0,
+        "cv": 0.261
+      }
+    },
+    "gemini:gemini-2.5-flash": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 235.0,
+        "std": 5.15,
+        "min": 228,
+        "max": 241,
+        "cv": 0.022
+      },
+      "functions": {
+        "n": 5,
+        "mean": 5.6,
+        "std": 0.89,
+        "min": 4,
+        "max": 6,
+        "cv": 0.16
+      },
+      "gates": {
+        "n": 5,
+        "mean": 2.8,
+        "std": 0.45,
+        "min": 2.0,
+        "max": 3.0,
+        "cv": 0.16
+      }
+    },
+    "gemini:gemini-2.5-pro": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 207.2,
+        "std": 39.62,
+        "min": 159,
+        "max": 238,
+        "cv": 0.191
+      },
+      "functions": {
+        "n": 5,
+        "mean": 5.6,
+        "std": 1.14,
+        "min": 4,
+        "max": 7,
+        "cv": 0.204
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.0,
+        "std": 1.41,
+        "min": 2.0,
+        "max": 5.0,
+        "cv": 0.354
+      }
+    },
+    "gemini:gemini-3-flash-preview": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 212.4,
+        "std": 16.01,
+        "min": 184,
+        "max": 222,
+        "cv": 0.075
+      },
+      "functions": {
+        "n": 5,
+        "mean": 5.8,
+        "std": 0.45,
+        "min": 5,
+        "max": 6,
+        "cv": 0.077
+      },
+      "gates": {
+        "n": 5,
+        "mean": 4.8,
+        "std": 0.45,
+        "min": 4.0,
+        "max": 5.0,
+        "cv": 0.093
+      }
+    },
+    "gemini:gemini-3-pro-preview": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 225.2,
+        "std": 2.39,
+        "min": 222,
+        "max": 228,
+        "cv": 0.011
+      },
+      "functions": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-4o": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 210.0,
+        "std": 0.0,
+        "min": 210,
+        "max": 210,
+        "cv": 0.0
+      },
+      "functions": {
+        "n": 5,
+        "mean": 6.0,
+        "std": 0.0,
+        "min": 6,
+        "max": 6,
+        "cv": 0.0
+      },
+      "gates": {
+        "n": 5,
+        "mean": 5.0,
+        "std": 0.0,
+        "min": 5.0,
+        "max": 5.0,
+        "cv": 0.0
+      }
+    },
+    "gpt-4o-mini": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 172.8,
+        "std": 21.97,
+        "min": 158,
+        "max": 207,
+        "cv": 0.127
+      },
+      "functions": {
+        "n": 5,
+        "mean": 5.4,
+        "std": 0.55,
+        "min": 5,
+        "max": 6,
+        "cv": 0.101
+      },
+      "gates": {
+        "n": 5,
+        "mean": 0.8,
+        "std": 1.1,
+        "min": 0.0,
+        "max": 2.0,
+        "cv": 1.369
+      }
+    },
+    "gpt-5.2": {
+      "n": 5,
+      "loc": {
+        "n": 5,
+        "mean": 202.4,
+        "std": 40.56,
+        "min": 158,
+        "max": 234,
+        "cv": 0.2
+      },
+      "functions": {
+        "n": 5,
+        "mean": 5.6,
+        "std": 0.55,
+        "min": 5,
+        "max": 6,
+        "cv": 0.098
+      },
+      "gates": {
+        "n": 5,
+        "mean": 3.0,
+        "std": 2.74,
+        "min": 0.0,
+        "max": 5.0,
+        "cv": 0.913
+      }
+    }
+  }
+}

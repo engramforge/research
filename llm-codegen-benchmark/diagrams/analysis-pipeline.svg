@@ -1,0 +1,370 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 870" width="1180" height="870">
+  <!-- Follows EngramForge Research Guidelines §6 Visual Standards v1.2 -->
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 8" refX="9" refY="4"
+            markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#4A6FA5"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 8" refX="9" refY="4"
+            markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2A8F82"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 8" refX="9" refY="4"
+            markerWidth="8" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#8B8FA3"/>
+    </marker>
+  </defs>
+
+  <rect width="1180" height="870" fill="#FFFFFF"/>
+
+  <!-- TITLE -->
+  <text x="550" y="36" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="18" font-weight="600" fill="#1A1A2E">
+    Code Quality Meta-Analysis: Four Layers
+  </text>
+  <text x="550" y="56" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="12" fill="#8B8FA3">
+    From per-run structural metrics → model generation fingerprints · 165 entropy-controlled runs · 11 models × 3 languages
+  </text>
+  <line x1="80" y1="68" x2="1080" y2="68" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- ================================================================ -->
+  <!-- LAYER 1: Per-Run Quality Extraction  y:88..248                    -->
+  <!-- ================================================================ -->
+  <rect x="80" y="88" width="1000" height="160" rx="6" ry="6"
+        fill="#FAFAFA" stroke="#2A8F82" stroke-width="1.5"/>
+  <path d="M86 88 L360 88 L360 112 L80 112 L80 94 A6 6 0 0 1 86 88 Z" fill="#2A8F82"/>
+  <text x="92" y="104"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5">
+    LAYER 1 — Per-Run Quality Extraction</text>
+
+  <!-- Bounded Context card -->
+  <rect x="104" y="122" width="166" height="36" rx="4" ry="4"
+        fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1"/>
+  <text x="187" y="137" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#4A6FA5">Bounded Context</text>
+  <text x="187" y="150" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">1 model × 1 language × 1 run</text>
+
+  <!-- Static Analysis card -->
+  <rect x="104" y="168" width="240" height="68" rx="4" ry="4"
+        fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1"/>
+  <text x="224" y="186" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#4A6FA5">Static Analysis (Automated)</text>
+  <text x="118" y="202"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#555555">LOC, function count, nesting depth</text>
+  <text x="118" y="216"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#555555">Cyclomatic complexity · type annotation %</text>
+  <text x="118" y="230"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#555555">Docstring density · security scan (bandit)</text>
+
+  <!-- LLM Judge card -->
+  <rect x="368" y="168" width="240" height="68" rx="4" ry="4"
+        fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1"/>
+  <text x="488" y="186" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#4A6FA5">LLM Judge (Semantic)</text>
+  <text x="382" y="202"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#555555">Clean code principles (SRP, DRY, naming)</text>
+  <text x="382" y="216"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#555555">Design pattern recognition (DI, Repository)</text>
+  <text x="382" y="230"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9.5" fill="#555555">Framework idiom adherence · score 1–5</text>
+
+  <!-- Tooling per Language card -->
+  <rect x="632" y="122" width="230" height="114" rx="4" ry="4"
+        fill="#FFFFFF" stroke="#8B8FA3" stroke-width="1"/>
+  <text x="747" y="140" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#555555">Tooling per Language</text>
+  <rect x="646" y="150" width="56" height="20" rx="3" ry="3" fill="#F0F4FF" stroke="#4A6FA5" stroke-width="0.75"/>
+  <text x="674" y="164" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" font-weight="600" fill="#4A6FA5">Python</text>
+  <text x="712" y="164"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">radon · pylint · bandit · mypy</text>
+  <rect x="646" y="176" width="56" height="20" rx="3" ry="3" fill="#F0F4FF" stroke="#4A6FA5" stroke-width="0.75"/>
+  <text x="674" y="190" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" font-weight="600" fill="#4A6FA5">C#</text>
+  <text x="712" y="190"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">dotnet-format · Roslyn · StyleCop</text>
+  <rect x="646" y="202" width="56" height="20" rx="3" ry="3" fill="#F0F4FF" stroke="#4A6FA5" stroke-width="0.75"/>
+  <text x="674" y="216" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" font-weight="600" fill="#4A6FA5">Java</text>
+  <text x="712" y="216"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Checkstyle · PMD · SpotBugs</text>
+
+  <!-- Output: Per-Run Quality Profile -->
+  <rect x="886" y="152" width="170" height="68" rx="4" ry="4"
+        fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="971" y="172" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Per-Run Profile</text>
+  <text x="971" y="187" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Automated metrics (JSON)</text>
+  <text x="971" y="200" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">LLM scores + justifications</text>
+  <text x="971" y="213" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Composite quality index</text>
+
+  <!-- Arrow: Tooling → Output -->
+  <line x1="862" y1="186" x2="886" y2="186"
+        stroke="#2A8F82" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+
+  <!-- ================================================================ -->
+  <!-- Arrow: Layer 1 → Layer 2                                          -->
+  <!-- ================================================================ -->
+  <line x1="550" y1="248" x2="550" y2="284"
+        stroke="#2A8F82" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+
+  <!-- ================================================================ -->
+  <!-- LAYER 2: Intra-Model Consistency  y:284..424                      -->
+  <!-- ================================================================ -->
+  <rect x="80" y="284" width="1000" height="140" rx="6" ry="6"
+        fill="#FAFAFA" stroke="#2A8F82" stroke-width="1.5"/>
+  <path d="M86 284 L610 284 L610 308 L80 308 L80 290 A6 6 0 0 1 86 284 Z" fill="#2A8F82"/>
+  <text x="92" y="300"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5">
+    LAYER 2 — Intra-Model Consistency (same model, same language, run-to-run)</text>
+
+  <!-- Bounded Context card -->
+  <rect x="104" y="318" width="166" height="36" rx="4" ry="4"
+        fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1"/>
+  <text x="187" y="333" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#4A6FA5">Bounded Context</text>
+  <text x="187" y="346" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">1 model × 1 language × N runs</text>
+
+  <!-- Structural Stability -->
+  <text x="296" y="332"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Structural Stability</text>
+  <text x="296" y="346"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">LOC coefficient of variation · function count σ · nesting depth range</text>
+
+  <!-- Quality Score Stability -->
+  <text x="296" y="370"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Quality Score Stability</text>
+  <text x="296" y="384"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Gate pass σ² · pattern selection consistency · quality floor / ceiling</text>
+
+  <!-- Architecture Fingerprint Similarity -->
+  <text x="660" y="332"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Architecture Fingerprint Similarity</text>
+  <text x="660" y="346"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Jaccard index of file/class/function names</text>
+
+  <!-- Naming Drift -->
+  <text x="660" y="370"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Naming Drift Analysis</text>
+  <text x="660" y="384"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Identifier consistency · semantic clustering</text>
+
+  <!-- Stylistic Entropy output box -->
+  <rect x="886" y="326" width="170" height="60" rx="4" ry="4"
+        fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="971" y="345" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Stylistic Entropy</text>
+  <text x="971" y="360" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Companion to</text>
+  <text x="971" y="373" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">functional entropy</text>
+
+  <!-- ================================================================ -->
+  <!-- Arrow: Layer 2 → Layer 3                                          -->
+  <!-- ================================================================ -->
+  <line x1="550" y1="424" x2="550" y2="460"
+        stroke="#2A8F82" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+
+  <!-- ================================================================ -->
+  <!-- LAYER 3: Inter-Model Comparison  y:460..600                       -->
+  <!-- ================================================================ -->
+  <rect x="80" y="460" width="1000" height="140" rx="6" ry="6"
+        fill="#FAFAFA" stroke="#2A8F82" stroke-width="1.5"/>
+  <path d="M86 460 L620 460 L620 484 L80 484 L80 466 A6 6 0 0 1 86 460 Z" fill="#2A8F82"/>
+  <text x="92" y="476"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5">
+    LAYER 3 — Inter-Model Comparison (model A vs B, same language)</text>
+
+  <!-- Bounded Context card -->
+  <rect x="104" y="494" width="172" height="36" rx="4" ry="4"
+        fill="#F0F4FF" stroke="#4A6FA5" stroke-width="1"/>
+  <text x="190" y="509" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#4A6FA5">Bounded Context</text>
+  <text x="190" y="522" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">K models × 1 language × N runs each</text>
+
+  <!-- Head-to-Head Quality -->
+  <text x="302" y="506"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Head-to-Head Quality</text>
+  <text x="302" y="520"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Mann-Whitney U · Kruskal-Wallis · Bonferroni correction</text>
+
+  <!-- Quality-Consistency Frontier -->
+  <text x="302" y="544"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Quality-Consistency Frontier</text>
+  <text x="302" y="558"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Mean quality (x) vs quality variance (y) — 2D scatter per model</text>
+
+  <!-- Enriched Cost-Quality Frontier -->
+  <text x="660" y="506"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Enriched Cost-Quality Frontier</text>
+  <text x="660" y="520"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Replaces binary pass/fail with composite quality score</text>
+
+  <!-- Effect Size Reporting -->
+  <text x="660" y="544"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Effect Size Reporting</text>
+  <text x="660" y="558"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Cohen's d alongside p-values for practical significance</text>
+
+  <!-- ================================================================ -->
+  <!-- Arrow: Layer 3 → Layer 4                                          -->
+  <!-- ================================================================ -->
+  <line x1="550" y1="600" x2="550" y2="636"
+        stroke="#2A8F82" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+
+  <!-- ================================================================ -->
+  <!-- LAYER 4: Model Generation Fingerprint  y:636..776                 -->
+  <!-- ================================================================ -->
+  <rect x="80" y="636" width="1000" height="140" rx="6" ry="6"
+        fill="#FAFAFA" stroke="#2A8F82" stroke-width="1.5"/>
+  <!-- Layer 4 uses blue banner to denote novel contribution -->
+  <path d="M86 636 L400 636 L400 660 L80 660 L80 642 A6 6 0 0 1 86 636 Z" fill="#4A6FA5"/>
+  <text x="92" y="652"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5">
+    LAYER 4 — Model Generation Fingerprint</text>
+  <text x="416" y="652"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" font-weight="600" fill="#4A6FA5" letter-spacing="0.5">NOVEL CONTRIBUTION</text>
+
+  <!-- Pattern Signature -->
+  <text x="104" y="680"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Pattern Signature</text>
+  <text x="104" y="694"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">DI · DTO · Repository · Layered Architecture · per-pattern present/absent frequency</text>
+
+  <!-- Idiom Profile -->
+  <text x="104" y="718"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Idiom Profile</text>
+  <text x="104" y="732"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Idiomatic / functional / anti-pattern rates · per-framework idiom adherence</text>
+
+  <!-- Style Signature -->
+  <text x="520" y="680"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Style Signature</text>
+  <text x="520" y="694"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">5 clean-code subscores (SRP · naming · DRY · small functions · error handling) μ ± σ</text>
+
+  <!-- Error Handling Philosophy -->
+  <text x="520" y="718"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Error Handling Philosophy</text>
+  <text x="520" y="732"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Classified as defensive / pragmatic / minimal / optimistic from judge scores</text>
+
+  <!-- Cross-Model Matrix output -->
+  <rect x="858" y="672" width="198" height="78" rx="4" ry="4"
+        fill="#E8F5E9" stroke="#2A8F82" stroke-width="1"/>
+  <text x="957" y="692" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" font-weight="600" fill="#1A1A2E">Cross-Model Matrix</text>
+  <text x="957" y="707" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Fingerprint radar charts</text>
+  <text x="957" y="720" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Model selection guidance</text>
+  <text x="957" y="733" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Generation personality profiles</text>
+
+  <!-- ================================================================ -->
+  <!-- BOTTOM: Language Stack Isolation                                   -->
+  <!-- ================================================================ -->
+  <line x1="233" y1="776" x2="233" y2="796" stroke="#8B8FA3" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="560" y1="776" x2="560" y2="796" stroke="#8B8FA3" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="897" y1="776" x2="897" y2="796" stroke="#8B8FA3" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="80" y="796" width="306" height="44" rx="6" ry="6" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="233" y="814" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#4A6FA5">Python / FastAPI</text>
+  <text x="233" y="828" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">radon · pylint · bandit · mypy · ast</text>
+
+  <rect x="407" y="796" width="306" height="44" rx="6" ry="6" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="560" y="814" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#4A6FA5">C# / ASP.NET Core</text>
+  <text x="560" y="828" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">dotnet-format · Roslyn · StyleCop</text>
+
+  <rect x="734" y="796" width="326" height="44" rx="6" ry="6" fill="#FFFFFF" stroke="#4A6FA5" stroke-width="1.5"/>
+  <text x="897" y="814" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="11" font-weight="600" fill="#4A6FA5">Java / Spring Boot</text>
+  <text x="897" y="828" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="9" fill="#555555">Checkstyle · PMD · SpotBugs · JavaParser</text>
+
+  <text x="550" y="855" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="10" fill="#8B8FA3">
+    All quality comparisons are bounded within a single language stack — cross-language quality comparison is out of scope
+  </text>
+</svg>
