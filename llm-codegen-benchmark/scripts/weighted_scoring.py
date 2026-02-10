@@ -1,6 +1,6 @@
 """Weighted quality scoring system for LLM-generated code.
 
-Implements the 8 quality attributes from the benchmark specification:
+Implements the 8 quality attributes from the llm-codebench specification:
 - Security (25%): SAST findings, safe patterns
 - Stability (20%): Test determinism, error handling  
 - Efficiency (15%): Performance benchmarks

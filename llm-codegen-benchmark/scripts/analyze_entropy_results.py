@@ -12,8 +12,7 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-RESULTS_DIR = REPO_ROOT / "results"
+RESULTS_DIR = Path(__file__).parent / "results"
 
 def load_recent_runs(since_timestamp="20260207-083000"):
     """Load all runs since the given timestamp."""
@@ -180,7 +179,7 @@ def main():
     print("\nGenerating report...")
     report = format_stats_table(grouped_stats)
     
-    output_file = REPO_ROOT / "ENTROPY_RESULTS.md"
+    output_file = Path(__file__).parent / "ENTROPY_RESULTS.md"
     output_file.write_text(report)
     
     print(f"\n✓ Report saved to: {output_file}")

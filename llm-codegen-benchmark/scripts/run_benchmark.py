@@ -40,98 +40,41 @@ try:
 except ImportError:
     ENTROPY_CONTROL_AVAILABLE = False
 
-# Optional imports - will check availability
-try:
-    import openai
-    OPENAI_AVAILABLE = True
-except ImportError:
-    OPENAI_AVAILABLE = False
+# ── LLM client: unified interface for all backends ──
+# All model registries, pricing tables, and call_* functions live in llm_client.py.
+# We import everything here so existing callers (discover_model_preferences.py,
+# compare_preference_impact.py) that do `from run_benchmark import call_openai`
+# still work.
+from llm_client import (
+    # Public API
+    call_llm,
+    determine_backend,
+    # Per-backend calls (backward compatibility)
+    call_openai,
+    call_anthropic,
+    call_gemini,
+    call_ollama,
+    call_ollama_cloud,
+    # Model registries (used by load_prompt, list-models, etc.)
+    OPENAI_MODELS,
+    ANTHROPIC_MODELS,
+    GEMINI_MODELS,
+    OPENAI_PRICING,
+    ANTHROPIC_PRICING,
+    GEMINI_PRICING,
+    OLLAMA_CLOUD_PRICING,
+)
 
-try:
-    import anthropic
-    ANTHROPIC_AVAILABLE = True
-except ImportError:
-    ANTHROPIC_AVAILABLE = False
-
+OLLAMA_CLOUD_PRICING_NOTE = (
+    "Ollama Cloud uses subscription pricing ($20/mo Pro, $100/mo Max), "
+    "not per-token billing. Costs shown are amortized estimates assuming "
+    "~5M tokens/month on the Pro plan. Actual cost depends on total monthly usage."
+)
 
 # Configuration
-# Paths relative to repository root
-REPO_ROOT = Path(__file__).resolve().parent.parent
-PILOT_DIR = REPO_ROOT / "scripts"
-SUITES_DIR = REPO_ROOT / "baselines"
-RESULTS_DIR = REPO_ROOT / "results"
-
-# Model mappings
-OPENAI_MODELS = {
-    # GPT-5.2 series (Dec 2025) - Chat models only
-    "gpt-5.2": "gpt-5.2",
-    "gpt-5.2-pro": "gpt-5.2-pro",
-    "gpt-5.2-chat-latest": "gpt-5.2-chat-latest",
-    # Note: gpt-5.2-codex uses /v1/completions endpoint (not supported yet)
-    # GPT-4o series
-    "gpt-4o": "gpt-4o",
-    "gpt-4o-mini": "gpt-4o-mini",
-    "gpt-4-turbo": "gpt-4-turbo",
-    "o1": "o1",
-    "o1-mini": "o1-mini",
-    "o3-mini": "o3-mini",
-}
-
-# Pricing per 1M tokens (input/output) - Estimated for GPT-5.2
-OPENAI_PRICING = {
-    "gpt-5.2": (5.00, 15.00),  # Estimated
-    "gpt-5.2-pro": (10.00, 30.00),  # Estimated
-    "gpt-5.2-chat-latest": (5.00, 15.00),  # Estimated
-    "gpt-5.2-codex": (7.50, 22.50),  # Estimated (completions API)
-    "gpt-4o": (2.50, 10.00),
-    "gpt-4o-mini": (0.15, 0.60),
-    "gpt-4-turbo": (10.00, 30.00),
-    "o1": (15.00, 60.00),
-    "o1-mini": (3.00, 12.00),
-    "o3-mini": (3.00, 12.00),
-}
-
-ANTHROPIC_PRICING = {
-    # Claude 4.6 series (Latest - Feb 2026)
-    "claude-opus-4-6": (25.00, 125.00),  # Estimated
-    # Claude 4.5 series (Sept-Nov 2025)
-    "claude-sonnet-4-5-20250929": (3.50, 17.50),
-    "claude-haiku-4-5-20251001": (0.80, 4.00),
-    "claude-opus-4-5-20251101": (20.00, 100.00),
-    # Claude 4.x series
-    "claude-opus-4-20250514": (15.00, 75.00),
-    "claude-sonnet-4-20250514": (3.00, 15.00),
-    "claude-4-opus-20250514": (15.00, 75.00),
-    "claude-4-sonnet-20250514": (3.00, 15.00),
-    "claude-3-opus-20240229": (15.00, 75.00),
-    "claude-3-5-sonnet-20241022": (3.00, 15.00),
-}
-
-ANTHROPIC_MODELS = {
-    # Claude 4.6 series (latest)
-    "claude-opus-4.6": "claude-opus-4-6",
-    "claude-opus-4-6": "claude-opus-4-6",
-    # Claude 4.5 series
-    "claude-sonnet-4.5": "claude-sonnet-4-5-20250929",
-    "claude-haiku-4.5": "claude-haiku-4-5-20251001",
-    "claude-opus-4.5": "claude-opus-4-5-20251101",
-    # Claude 4 models
-    "claude-opus": "claude-opus-4-20250514",
-    "claude-sonnet": "claude-sonnet-4-20250514",
-    "claude-4-opus": "claude-4-opus-20250514",
-    "claude-4-sonnet": "claude-4-sonnet-20250514",
-    # Full names
-    "claude-sonnet-4-5-20250929": "claude-sonnet-4-5-20250929",
-    "claude-haiku-4-5-20251001": "claude-haiku-4-5-20251001",
-    "claude-opus-4-5-20251101": "claude-opus-4-5-20251101",
-    "claude-opus-4-20250514": "claude-opus-4-20250514",
-    "claude-sonnet-4-20250514": "claude-sonnet-4-20250514",
-    "claude-4-opus-20250514": "claude-4-opus-20250514",
-    "claude-4-sonnet-20250514": "claude-4-sonnet-20250514",
-    # Claude 3.x legacy
-    "claude-3-opus": "claude-3-opus-20240229",
-    "claude-3-sonnet": "claude-3-5-sonnet-20241022",
-}
+PILOT_DIR = Path("/Users/jgray/projects/ai/llm-codebench/pilot")
+SUITES_DIR = Path("/Users/jgray/projects/ai/llm-codebench/suites")
+RESULTS_DIR = PILOT_DIR / "results"
 
 
 def load_baseline_files(task_id: str, suite_dir: Path) -> str:
@@ -163,21 +106,21 @@ def load_prompt(task_id: str = "fastapi-001", model: str = None, suite_dir: Path
     
     # Determine framework from task_id
     if task_id.startswith("aspnetcore"):
-        prompt_file = REPO_ROOT / "prompts" / "aspnetcore.txt"
+        prompt_file = PILOT_DIR / "prompt_aspnetcore.txt"
     elif task_id.startswith("springboot"):
-        prompt_file = REPO_ROOT / "prompts" / "springboot.txt"
+        prompt_file = PILOT_DIR / "prompt_springboot.txt"
     elif task_id.startswith("fastapi"):
         # Check if using Ollama - use specialized prompt
         if model and determine_backend(model) == "ollama":
-            ollama_prompt_file = REPO_ROOT / "prompts" / "ollama.txt"
+            ollama_prompt_file = PILOT_DIR / "prompt_ollama.txt"
             if ollama_prompt_file.exists():
                 prompt_file = ollama_prompt_file
             else:
-                prompt_file = REPO_ROOT / "prompts" / "fastapi.txt"
+                prompt_file = PILOT_DIR / "prompt.txt"
         else:
-            prompt_file = REPO_ROOT / "prompts" / "fastapi.txt"
+            prompt_file = PILOT_DIR / "prompt.txt"
     else:
-        prompt_file = REPO_ROOT / "prompts" / "fastapi.txt"
+        prompt_file = PILOT_DIR / "prompt.txt"
     
     if not prompt_file.exists():
         raise FileNotFoundError(f"Prompt file not found: {prompt_file}")
@@ -208,151 +151,8 @@ def load_prompt(task_id: str = "fastapi-001", model: str = None, suite_dir: Path
     return base_prompt
 
 
-def call_openai(model: str, prompt: str, max_tokens: int = 8192) -> tuple[str, dict]:
-    """Call OpenAI API. Returns (output, usage_info)."""
-    import time
-    
-    if not OPENAI_AVAILABLE:
-        raise ImportError("openai package not installed. Run: pip install openai")
-    
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        raise ValueError("OPENAI_API_KEY environment variable not set")
-    
-    client = openai.OpenAI(api_key=api_key)
-    
-    model_id = OPENAI_MODELS.get(model, model)
-    
-    print(f"Calling OpenAI API with model: {model_id} (max_tokens: {max_tokens})")
-    
-    # GPT-5 models use max_completion_tokens instead of max_tokens
-    token_param = "max_completion_tokens" if "gpt-5" in model_id else "max_tokens"
-    
-    # Time the API call
-    start_time = time.time()
-    
-    response = client.chat.completions.create(
-        model=model_id,
-        messages=[
-            {"role": "user", "content": prompt}
-        ],
-        **{token_param: max_tokens},
-        temperature=0.2,  # Lower temperature for more deterministic code
-    )
-    
-    elapsed_time = time.time() - start_time
-    
-    usage = {
-        "input_tokens": response.usage.prompt_tokens,
-        "output_tokens": response.usage.completion_tokens,
-        "total_tokens": response.usage.total_tokens,
-        "finish_reason": response.choices[0].finish_reason,  # 'stop', 'length', 'content_filter'
-        "api_response_time_seconds": elapsed_time,
-    }
-    
-    # Calculate cost
-    pricing = OPENAI_PRICING.get(model_id, (0, 0))
-    input_cost = (usage["input_tokens"] / 1_000_000) * pricing[0]
-    output_cost = (usage["output_tokens"] / 1_000_000) * pricing[1]
-    usage["estimated_cost_usd"] = input_cost + output_cost
-    
-    print(f"  API response time: {elapsed_time:.2f}s")
-    
-    print(f"  Tokens: {usage['input_tokens']} in, {usage['output_tokens']} out")
-    print(f"  Finish: {usage['finish_reason']}")
-    if usage['finish_reason'] == 'length':
-        print(f"  ⚠️  TRUNCATED - hit max_tokens limit!")
-    print(f"  Cost: ${usage['estimated_cost_usd']:.4f}")
-    
-    return response.choices[0].message.content, usage
-
-
-def call_anthropic(model: str, prompt: str, max_tokens: int = 8192) -> tuple[str, dict]:
-    """Call Anthropic API. Returns (output, usage_info)."""
-    import time
-    
-    if not ANTHROPIC_AVAILABLE:
-        raise ImportError("anthropic package not installed. Run: pip install anthropic")
-    
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY environment variable not set")
-    
-    client = anthropic.Anthropic(api_key=api_key)
-    
-    model_id = ANTHROPIC_MODELS.get(model, model)
-    
-    print(f"Calling Anthropic API with model: {model_id} (max_tokens: {max_tokens})")
-    
-    # Time the API call
-    start_time = time.time()
-    
-    response = client.messages.create(
-        model=model_id,
-        max_tokens=max_tokens,
-        messages=[
-            {"role": "user", "content": prompt}
-        ],
-    )
-    
-    elapsed_time = time.time() - start_time
-    
-    usage = {
-        "input_tokens": response.usage.input_tokens,
-        "output_tokens": response.usage.output_tokens,
-        "total_tokens": response.usage.input_tokens + response.usage.output_tokens,
-        "api_response_time_seconds": elapsed_time,
-        "stop_reason": response.stop_reason,  # 'end_turn', 'max_tokens', 'stop_sequence'
-    }
-    
-    # Calculate cost
-    pricing = ANTHROPIC_PRICING.get(model_id, (0, 0))
-    input_cost = (usage["input_tokens"] / 1_000_000) * pricing[0]
-    output_cost = (usage["output_tokens"] / 1_000_000) * pricing[1]
-    usage["estimated_cost_usd"] = input_cost + output_cost
-    
-    print(f"  Tokens: {usage['input_tokens']} in, {usage['output_tokens']} out")
-    print(f"  API response time: {elapsed_time:.2f}s")
-    print(f"  Stop: {usage['stop_reason']}")
-    if usage['stop_reason'] == 'max_tokens':
-        print(f"  ⚠️  TRUNCATED - hit max_tokens limit!")
-    print(f"  Cost: ${usage['estimated_cost_usd']:.4f}")
-    
-    return response.content[0].text, usage
-
-
-def call_ollama(model: str, prompt: str) -> tuple[str, dict]:
-    """Call Ollama locally. Returns (output, usage_info)."""
-    # Strip 'ollama:' prefix if present
-    model = model.replace("ollama:", "")
-    
-    print(f"Calling Ollama with model: {model}")
-    
-    # Use subprocess to avoid ANSI codes
-    result = subprocess.run(
-        ["ollama", "run", model, "--nowordwrap"],
-        input=prompt,
-        capture_output=True,
-        text=True,
-        timeout=300,  # 5 minute timeout
-    )
-    
-    output = result.stdout
-    
-    # Strip ANSI escape codes
-    ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
-    output = ansi_escape.sub('', output)
-    
-    usage = {
-        "input_tokens": 0,  # Ollama doesn't report usage
-        "output_tokens": 0,
-        "total_tokens": 0,
-        "estimated_cost_usd": 0.0,
-    }
-    
-    print(f"  Local model (no cost)")
-    
-    return output, usage
+# NOTE: call_openai, call_anthropic, call_ollama, call_ollama_cloud, call_gemini,
+# and determine_backend are now imported from llm_client.py (see top of file).
 
 
 def extract_diff(output: str) -> Optional[str]:
@@ -393,6 +193,11 @@ def extract_diff(output: str) -> Optional[str]:
 def extract_and_apply_files(output: str, workspace: Path) -> tuple[bool, str, Optional[str]]:
     """Extract file contents from model output, apply to workspace, and generate diff.
     
+    Tries in order:
+    1. FILE: blocks (native format)
+    2. ```python # path/to/file.py blocks
+    3. Unified diff (```diff or raw diff --git)
+    
     Returns: (success, message, diff_content)
     """
     
@@ -406,7 +211,23 @@ def extract_and_apply_files(output: str, workspace: Path) -> tuple[bool, str, Op
         matches = re.findall(file_pattern, output, re.DOTALL)
     
     if not matches:
-        return False, "Could not find any FILE: blocks in output", None
+        # Try unified diff format as fallback (many models prefer this)
+        diff = extract_diff(output)
+        if diff:
+            print("No FILE: blocks found, but found unified diff — applying directly")
+            # Initialize git if needed
+            if not (workspace / ".git").exists():
+                subprocess.run(["git", "init", "-q"], cwd=workspace, check=True)
+                subprocess.run(["git", "add", "-A"], cwd=workspace, check=True)
+                subprocess.run(["git", "commit", "-q", "-m", "Initial"], cwd=workspace, check=True)
+            
+            applied, message = apply_diff(diff, workspace)
+            if applied:
+                return True, f"Applied unified diff directly: {message}", diff
+            else:
+                return False, f"Found unified diff but failed to apply: {message}", diff
+        
+        return False, "Could not find any FILE: blocks or unified diff in output", None
     
     print(f"Found {len(matches)} file(s) to apply")
     
@@ -420,6 +241,18 @@ def extract_and_apply_files(output: str, workspace: Path) -> tuple[bool, str, Op
     files_written = []
     for file_path, content in matches:
         file_path = file_path.strip()
+        
+        # Sanitize: reject paths that contain newlines or are absurdly long
+        # (some models embed file content into the path field)
+        if '\n' in file_path or len(file_path) > 200:
+            # Try to extract just the first line as the real path
+            first_line = file_path.split('\n')[0].strip()
+            if first_line and len(first_line) < 200 and '/' in first_line:
+                file_path = first_line
+            else:
+                print(f"  Skipping malformed file path ({len(file_path)} chars)")
+                continue
+        
         full_path = workspace / file_path
         
         # Create directories if needed
@@ -692,19 +525,9 @@ def run_tests_java(workspace: Path) -> dict:
     return results
 
 
-def determine_backend(model: str) -> str:
-    """Determine which backend to use for a model."""
-    if model.startswith("ollama:"):
-        return "ollama"
-    if model in OPENAI_MODELS or model.startswith("gpt-") or model.startswith("o1") or model.startswith("o3"):
-        return "openai"
-    if model in ANTHROPIC_MODELS or model.startswith("claude"):
-        return "anthropic"
-    # Default to ollama for unknown models
-    return "ollama"
 
 
-def run_benchmark(model: str, task: str = "fastapi-001", dry_run: bool = False, iterations: int = 1, refine_model: str = None, force_iterations: bool = False, use_model_preferences: bool = False) -> dict:
+def run_benchmark(model: str, task: str = "fastapi-001", dry_run: bool = False, iterations: int = 1, refine_model: str = None, force_iterations: bool = False, use_model_preferences: bool = False, temperature: float = 0.2) -> dict:
     """Run a single benchmark trial with optional iterative refinement.
     
     Args:
@@ -743,11 +566,11 @@ def run_benchmark(model: str, task: str = "fastapi-001", dry_run: bool = False, 
     
     # Determine suite directory for loading baseline files
     if task.startswith("aspnetcore"):
-        suite_dir = SUITES_DIR / "aspnetcore"
+        suite_dir = SUITES_DIR / "bench-aspnetcore"
     elif task.startswith("springboot"):
-        suite_dir = SUITES_DIR / "springboot"
+        suite_dir = SUITES_DIR / "bench-springboot"
     else:
-        suite_dir = SUITES_DIR / "fastapi"
+        suite_dir = SUITES_DIR / "bench-fastapi"
     
     # Load prompt with model-specific customization and baseline files
     prompt = load_prompt(task, model, suite_dir)
@@ -808,21 +631,20 @@ def run_benchmark(model: str, task: str = "fastapi-001", dry_run: bool = False, 
         
         print(f"Using model: {current_model}")
         
-        # Call model
+        # Call model via unified LLM client
         if dry_run:
             print("DRY RUN - would call model here")
             raw_output = "DRY RUN"
-            usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "estimated_cost_usd": 0.0, "stop_reason": "stop"}
+            usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "estimated_cost_usd": 0.0, "stop_reason": "stop", "truncated": False}
         else:
-            if current_backend == "openai":
-                raw_output, usage = call_openai(current_model, current_prompt, current_max_tokens)
-            elif current_backend == "anthropic":
-                raw_output, usage = call_anthropic(current_model, current_prompt, current_max_tokens)
-            else:
-                raw_output, usage = call_ollama(current_model, current_prompt)
+            raw_output, usage = call_llm(
+                current_model, current_prompt,
+                max_tokens=current_max_tokens,
+                temperature=temperature,
+            )
         
         # Check for truncation and increase max_tokens for next iteration
-        was_truncated = usage.get('stop_reason') == 'max_tokens' or usage.get('finish_reason') == 'length'
+        was_truncated = usage.get("truncated", False)
         if was_truncated:
             old_max = current_max_tokens
             current_max_tokens = min(current_max_tokens * 2, 32768)  # Double up to 32K max
@@ -838,11 +660,11 @@ def run_benchmark(model: str, task: str = "fastapi-001", dry_run: bool = False, 
         
         # Create workspace for this iteration - determine suite from task
         if task.startswith("aspnetcore"):
-            suite_dir = SUITES_DIR / "aspnetcore"
+            suite_dir = SUITES_DIR / "bench-aspnetcore"
         elif task.startswith("springboot"):
-            suite_dir = SUITES_DIR / "springboot"
+            suite_dir = SUITES_DIR / "bench-springboot"
         else:
-            suite_dir = SUITES_DIR / "fastapi"
+            suite_dir = SUITES_DIR / "bench-fastapi"
         
         workspace = output_dir / f"workspace_iter{iteration}"
         shutil.copytree(suite_dir, workspace)
@@ -1065,7 +887,7 @@ Provide your CORRECTED files:
         print("WARNING: Could not extract diff from output")
     
     # Create workspace
-    suite_dir = SUITES_DIR / "fastapi"
+    suite_dir = SUITES_DIR / "bench-fastapi"
     workspace = output_dir / "workspace"
     shutil.copytree(suite_dir, workspace)
     print(f"Created workspace: {workspace}")
@@ -1147,6 +969,7 @@ def run_with_entropy_control(
     min_confidence: float = 0.90,
     max_runs: int = 5,
     quality_variance_threshold: float = 0.15,
+    temperature: float = 0.2,
 ) -> dict:
     """
     Run benchmark with automatic entropy control.
@@ -1156,7 +979,7 @@ def run_with_entropy_control(
     """
     if not ENTROPY_CONTROL_AVAILABLE:
         print("⚠️  entropy_control module not available, running single iteration")
-        return run_benchmark(model, task, dry_run, 1, refine_model, False, use_model_preferences)
+        return run_benchmark(model, task, dry_run, 1, refine_model, False, use_model_preferences, temperature)
     
     controller = EntropyController(
         min_confidence=min_confidence,
@@ -1170,6 +993,7 @@ def run_with_entropy_control(
     print(f"Min confidence: {min_confidence:.0%}")
     print(f"Max runs: {max_runs}")
     print(f"Quality variance threshold: {quality_variance_threshold:.3f}")
+    print(f"Temperature: {temperature}")
     print(f"{'='*70}\n")
     
     results = []
@@ -1190,6 +1014,7 @@ def run_with_entropy_control(
             refine_model=refine_model,
             force_iterations=False,
             use_model_preferences=use_model_preferences,
+            temperature=temperature,
         )
         
         results.append(result)
@@ -1253,6 +1078,7 @@ def main():
     parser.add_argument("--min-confidence", type=float, default=0.90, help="Minimum confidence level for entropy control (default: 0.90)")
     parser.add_argument("--max-entropy-runs", type=int, default=5, help="Maximum runs for entropy control (default: 5)")
     parser.add_argument("--variance-threshold", type=float, default=0.15, help="Quality variance threshold for entropy control (default: 0.15)")
+    parser.add_argument("--temperature", type=float, default=0.2, help="Sampling temperature for all providers (default: 0.2)")
     
     args = parser.parse_args()
     
@@ -1264,10 +1090,22 @@ def main():
         print("\nAnthropic:")
         for name, model_id in ANTHROPIC_MODELS.items():
             print(f"  {name} -> {model_id}")
-        print("\nOllama (prefix with 'ollama:'):")
-        print("  ollama:qwen2.5-coder:7b")
+        print("\nGemini (prefix with 'gemini:' or use bare model name):")
+        for name, model_id in GEMINI_MODELS.items():
+            pricing = GEMINI_PRICING.get(model_id, (0, 0))
+            print(f"  gemini:{name} -> {model_id}  (${pricing[0]}/{pricing[1]} per 1M tok)")
+        print("  Auth: GEMINI_API_KEY or VERTEX_AI_API_KEY + VERTEX_AI_PROJECT")
+        print("\nOllama Cloud (prefix with 'cloud:'):")
+        print("  cloud:qwen3-coder-next          # 80B MoE, 3B active — coding specialist")
+        print("  cloud:deepseek-v3.2             # 671B MoE — DeepSeek flagship")
+        print("  cloud:devstral-2                # 123B Mistral coding agent")
+        print("  cloud:qwen3-coder:480b          # 480B MoE — largest Qwen coder")
+        print("  See: https://ollama.com/search?c=cloud")
+        print("\nOllama Local (prefix with 'ollama:'):")
+        print("  ollama:qwen2.5-coder:32b        # Best open-source coder for 32GB")
         print("  ollama:qwen2.5-coder:14b")
-        print("  ollama:codellama:7b")
+        print("  ollama:qwen2.5-coder:7b")
+        print("  ollama:devstral:24b")
         print("  ollama:<any-model>")
         return
     
@@ -1289,6 +1127,7 @@ def main():
             min_confidence=args.min_confidence,
             max_runs=args.max_entropy_runs,
             quality_variance_threshold=args.variance_threshold,
+            temperature=args.temperature,
         )
     else:
         run_benchmark(
@@ -1298,7 +1137,8 @@ def main():
             args.iterations, 
             refine_model, 
             args.force_iterations,
-            args.use_model_preferences
+            args.use_model_preferences,
+            args.temperature
         )
 
 
