@@ -1,7 +1,7 @@
 # LLM Code Generation Benchmark — Reproduction Package
 
 **Study:** Measuring LLM Code Generation Consistency for Platform Integration  
-**Date:** 2026-02-07  
+**Date:** 2026-02-11  
 **License:** MIT
 
 ---
@@ -10,11 +10,16 @@
 
 This repository contains everything needed to reproduce our pilot study on LLM code generation quality across enterprise frameworks. It is fully self-contained — no external repositories are required.
 
-The study measured five commercial LLMs against a standardized brownfield task ("add an Orders endpoint") across three frameworks, using entropy-controlled multi-run testing to detect variance that single-run benchmarks miss.
+The study measured **11 LLMs from four providers** against a standardized brownfield task ("add an Orders endpoint") across three frameworks, using entropy-controlled multi-run testing (n=5 per cell, temperature=0.2) to detect variance that single-run benchmarks miss. The study also includes a meta-prompting experiment (prompt format preference discovery + A/B testing) and a code quality meta-analysis using cross-family LLM judges.
 
-**Models tested:** Claude Sonnet 4.5, GPT-4o, Claude Opus 4.6, GPT-4o-mini, GPT-5.2  
+**Models tested (11):**
+- **Anthropic:** Claude Sonnet 4.5, Claude Opus 4.6
+- **Google:** Gemini 3 Pro Preview, Gemini 3 Flash Preview, Gemini 2.5 Pro, Gemini 2.5 Flash
+- **OpenAI:** GPT-4o, GPT-4o-mini, GPT-5.2
+- **Ollama Cloud (open-weight):** DeepSeek V3.2, Qwen3-Coder-Next
+
 **Frameworks:** Python/FastAPI, C#/ASP.NET Core 9, Java/Spring Boot 3  
-**Total runs:** 48 entropy-controlled benchmark executions
+**Total runs:** 165 entropy-controlled benchmark executions (11 models × 3 tasks × 5 runs)
 
 ## Prerequisites
 
@@ -26,9 +31,11 @@ The study measured five commercial LLMs against a standardized brownfield task (
 | Maven | ≥ 3.9 | Spring Boot build |
 | Git | any | Cloning this repo |
 
-**API keys** (at least one required):
+**API keys** (set the keys for each provider you want to benchmark):
 - `OPENAI_API_KEY` — for GPT-4o, GPT-4o-mini, GPT-5.2
 - `ANTHROPIC_API_KEY` — for Claude Sonnet 4.5, Claude Opus 4.6
+- `GEMINI_API_KEY` (or `GCP_PROJECT_ID` + ADC, or `VERTEX_AI_API_KEY`) — for Gemini 3 Pro/Flash Preview, Gemini 2.5 Pro/Flash
+- `OLLAMA_API_KEY` — for DeepSeek V3.2, Qwen3-Coder-Next (via Ollama Cloud)
 
 ## Quick Start
 
@@ -49,8 +56,11 @@ pip install -r scripts/requirements.txt
 ### 2. Supply API credentials
 
 ```bash
-export OPENAI_API_KEY="your-openai-key"
-export ANTHROPIC_API_KEY="your-anthropic-key"
+# Set keys for the providers you want to benchmark
+export OPENAI_API_KEY="your-openai-key"        # GPT-4o, GPT-4o-mini, GPT-5.2
+export ANTHROPIC_API_KEY="your-anthropic-key"    # Claude Sonnet 4.5, Claude Opus 4.6
+export GEMINI_API_KEY="your-gemini-key"          # Gemini 3 Pro/Flash, Gemini 2.5 Pro/Flash
+export OLLAMA_API_KEY="your-ollama-cloud-key"    # DeepSeek V3.2, Qwen3-Coder-Next
 ```
 
 ### 3. Verify baselines build
@@ -96,7 +106,15 @@ python scripts/run_benchmark.py \
 ```bash
 source .venv/bin/activate
 
-MODELS=("gpt-4o-mini" "gpt-4o" "claude-sonnet-4.5" "gpt-5.2" "claude-opus-4.6")
+# All 11 models from the study:
+MODELS=(
+  "claude-sonnet-4.5" "claude-opus-4.6"         # Anthropic
+  "gemini:gemini-3-pro-preview"                  # Google
+  "gemini:gemini-3-flash-preview"
+  "gemini:gemini-2.5-pro" "gemini:gemini-2.5-flash"
+  "gpt-4o" "gpt-4o-mini" "gpt-5.2"              # OpenAI
+  "cloud:deepseek-v3.2" "cloud:qwen3-coder-next" # Ollama Cloud
+)
 TASKS=("fastapi-001" "aspnetcore-001" "springboot-001")
 
 for model in "${MODELS[@]}"; do
@@ -178,11 +196,27 @@ llm-codegen-benchmark/
 │           └── UserControllerTest.java   MockMvc tests
 │
 ├── scripts/                        ← benchmark runner + analysis tools
-│   ├── requirements.txt               Python deps (openai, anthropic, pyyaml)
-│   ├── run_benchmark.py               main benchmark runner (1300 lines)
+│   ├── requirements.txt               Python deps (openai, anthropic, google-genai, ollama, ...)
+│   ├── llm_client.py                  unified LLM client (OpenAI/Anthropic/Gemini/Ollama)
+│   ├── run_benchmark.py               main benchmark runner
 │   ├── entropy_control.py             variance detection + re-run logic
 │   ├── weighted_scoring.py            8-attribute quality scoring
-│   └── analyze_entropy_results.py     results aggregation + report generation
+│   ├── static_analysis.py             deterministic code metrics (LOC, complexity, ...)
+│   ├── llm_judge.py                   cross-family LLM-as-judge pipeline
+│   ├── quality_analysis.py            intra-model consistency + fingerprint extraction
+│   ├── adaptive_prompting.py          meta-prompting prompt adaptation
+│   ├── compare_preference_impact.py   A/B testing: baseline vs adapted prompts
+│   ├── discover_model_preferences.py  meta-prompting preference profiling
+│   ├── analyze_metaprompt_results.py  statistical analysis of A/B results
+│   ├── analyze_entropy_results.py     results aggregation + report generation
+│   ├── aggregate_judge_results.py     collate LLM judge results
+│   ├── combined_ranking.py            merged correctness + quality ranking
+│   ├── score_all_results.py           batch quality scoring
+│   ├── generate_radar.py              fingerprint radar SVG generator
+│   ├── isolate_clean_dataset.py       data cleaning (smoke-test/excess removal)
+│   ├── regenerate_tables.py           paper-ready markdown table generation
+│   ├── run_judge.sh                   shell wrapper for LLM judge
+│   └── run_metaprompt_experiment.sh   full meta-prompting experiment pipeline
 │
 ├── prompts/                        ← exact prompt templates used
 │   ├── fastapi.txt                    Python/FastAPI prompt
@@ -194,14 +228,43 @@ llm-codegen-benchmark/
 │   ├── aspnetcore-001.yaml            ASP.NET Core task spec
 │   └── springboot-001.yaml            Spring Boot task spec
 │
-├── data/                           ← our published results (48 runs)
-│   ├── entropy_controlled_runs.json   individual run results
-│   ├── entropy_controlled_runs.csv    same data in CSV
-│   └── summary_statistics.json        aggregated per model×task
+├── model_preferences/              ← meta-prompting preference profiles (11 models)
+│   ├── claude-sonnet-4.5.md           Claude Sonnet prompt preferences
+│   ├── claude-opus-4.6.md             Claude Opus prompt preferences
+│   ├── gpt-4o.md, gpt-4o-mini.md, gpt-5.2.md
+│   ├── gemini-gemini-2.5-flash.md ... gemini-gemini-3-pro-preview.md
+│   └── cloud-deepseek-v3.2.md, cloud-qwen3-coder-next.md
 │
-└── diagrams/                       ← architecture diagrams
+├── data/                           ← our published results (165 runs)
+│   ├── entropy_controlled_runs.json   individual run results (48 initial runs)
+│   ├── entropy_controlled_runs.csv    same data in CSV
+│   ├── summary_statistics.json        aggregated per model×task
+│   ├── inter_model_comparison.json    cross-model structural comparison
+│   ├── intra_model_consistency.json   within-model variance analysis
+│   ├── model_fingerprints.json        per-model behavioral fingerprints
+│   └── quality_consistency_frontier.json  quality vs consistency frontier
+│
+├── pilot/                          ← meta-prompting A/B experiment outputs
+│   ├── figures/
+│   │   └── llm_judge_quality_scores.svg
+│   └── meta_prompting_ab_results.svg
+│
+├── hooks/                          ← git hooks
+│   └── pre-commit-no-secrets          prevents accidental key commits
+│
+└── diagrams/                       ← architecture & analysis diagrams (12 SVGs)
     ├── benchmark-pipeline.svg         pipeline overview
-    └── entropy-control-flow.svg       entropy control decision flow
+    ├── entropy-control-flow.svg       entropy control decision flow
+    ├── analysis-pipeline.svg          multi-layer analysis pipeline
+    ├── analysis-layers.svg            analysis layer breakdown
+    ├── code-quality-meta-analysis-framework.svg
+    ├── cost-quality-frontier.svg      Pareto frontier visualization
+    ├── fingerprint-radar.svg          model behavioral fingerprints
+    ├── gate-heatmap.svg               per-model gate pass heatmap
+    ├── meta-analysis-pipeline.svg     code quality meta-analysis flow
+    ├── quality-consistency-frontier.svg
+    ├── statistical-analysis.svg       hypothesis test summary
+    └── stylistic-entropy-heatmap.svg  cross-model style variance
 ```
 
 ## How the Benchmark Works
@@ -290,15 +353,39 @@ Aggregated per model×task combination:
 
 ## Key Findings
 
-| Model | Mean Gates (All Tasks) | Variance | Cost/Run |
-|-------|----------------------|----------|----------|
-| Claude Sonnet 4.5 | 5.00 ± 0.00 | None | $0.043 |
-| GPT-4o | 4.89 ± 0.33 | Low | $0.016 |
-| Claude Opus 4.6 | 4.67 ± 0.47 | Low | $0.282 |
-| GPT-4o-mini | 4.33 ± 1.25 | **High on Python** | $0.001 |
-| GPT-5.2 | 4.00 ± 1.63 | **High on Python** | $0.026 |
+| Rank | Model | Mean Gates | σ | Cost/Run | Notes |
+|------|-------|-----------|---|----------|-------|
+| 1 | Gemini 3 Pro Preview | 5.00 | 0.00 | $0.022 | Only model with perfect 15/15 runs |
+| 2 | Claude Sonnet 4.5 | 4.93 | 0.26 | $0.043 | Near-perfect, highest quality prose |
+| 3 | Gemini 3 Flash Preview | 4.93 | 0.26 | $0.005 | Best value for near-perfect results |
+| 4 | GPT-4o | 4.93 | 0.26 | $0.015 | Good value, variable on ASP.NET |
+| 5 | Claude Opus 4.6 | 4.53 | 0.83 | $0.290 | 58× Gemini Flash cost, worse quality |
+| 6 | Gemini 2.5 Pro | 4.33 | 0.98 | $0.018 | Mid-tier, unreliable types/tests |
+| 7 | Qwen3-Coder-Next | 4.07 | 0.96 | †sub | Open-weight via Ollama Cloud |
+| 8 | GPT-5.2 | 4.00 | 1.69 | $0.026 | Bimodal on FastAPI (5/5 or 0/5) |
+| 9 | DeepSeek V3.2 | 3.87 | 1.64 | †sub | Open-weight via Ollama Cloud |
+| 10 | GPT-4o-mini | 3.60 | 2.13 | $0.001 | Cheapest but unreliable on Python |
+| 11 | Gemini 2.5 Flash | 3.33 | 0.62 | $0.007 | Never achieves 5/5 (0% perfect rate) |
 
-The most notable finding: variance concentrates on Python/FastAPI while C# and Java tasks are stable across all models. See `data/summary_statistics.json` for full per-task breakdowns.
+*†sub = Ollama Cloud subscription pricing. n=5 per cell, temperature=0.2 across all providers.*
+
+Key observations:
+- **Multi-run testing is essential.** Single-run benchmarks produce misleading results — GPT-5.2 on FastAPI scores 5/5 or 0/5 with roughly equal probability.
+- **Variance concentrates on Python/FastAPI** while C# and Java tasks are stable across all models.
+- **Cost and quality don't always correlate.** Gemini 3 Flash ($0.005/run) outperforms Claude Opus 4.6 ($0.290/run, 58× more expensive).
+- **Meta-prompting helps some models but hurts others.** A/B testing (n=5 per condition) showed +6.1% mean improvement but was not significant across all models (sign test p=0.754).
+
+See `data/summary_statistics.json` for full per-task breakdowns.
+
+## Additional Analyses
+
+Beyond the core benchmark, this repository includes:
+
+- **Code quality meta-analysis** — Cross-family LLM-as-judge evaluation of all 165 runs using Gemini 3 Pro Preview and Claude Sonnet 4.5 as judges. Results in `data/model_fingerprints.json`.
+- **Meta-prompting experiment** — Preference discovery for all 11 models (profiles in `model_preferences/`) + A/B testing of adapted prompts. Results in `pilot/meta_prompting_ab_results.svg`.
+- **Static analysis** — Deterministic metrics (LOC, cyclomatic complexity, nesting depth, type coverage, docstring density) across all 165 runs. Results in `data/intra_model_consistency.json`.
+
+See `LLM_CODEGEN_PILOT_STUDY.md` for the complete write-up.
 
 ## Citation
 
